@@ -9,6 +9,13 @@ Con esta plataforma, el usuario puede crear su propio equipo, gestionar jugadore
 - Base de datos MySQL 🗄️
 - Conexión Java ↔ MySQL mediante JDBC 🔗
 
+  ## 📂 Estructura de carpetas
+- `src/recursos/` → imágenes, iconos y otros recursos necesarios para la aplicación  
+- `src/fantasy_lol/modelo/` → clases de negocio (Plantilla, Equipo, Campeón,Usuario, etc.)  
+- `src/fantasy_lol/main/` → clase principal (`Main.java`) que ejecuta la aplicación  
+- `src/fantasy_lol/interfaz/` → ventanas y componentes gráficos (JFrame, JPanel, botones)  
+- `src/fantasy_lol/conexion/` → clases encargadas de la conexión a MySQL  
+
 ## ✨ Funcionalidades
 - Crear y gestionar tu propio equipo de la liga.
 - Añadir, eliminar o modificar jugadores.
