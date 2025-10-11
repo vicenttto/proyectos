@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"Fantasy_lol","l":"fantasy_lol.conexion"},{"m":"Fantasy_lol","l":"fantasy_lol.interfaz"},{"m":"Fantasy_lol","l":"fantasy_lol.main"},{"m":"Fantasy_lol","l":"fantasy_lol.modelo"}];updateSearchResults();
