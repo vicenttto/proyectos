@@ -26,4 +26,4 @@ Este proyecto implementa las siguientes características:
 
 * **HTML5**
 * **CSS3** (Variables, Flexbox, Media Queries)
-* **JavaScript (ES6+)** (para la interactividad del menú móvil)
+* **JavaScript** 
