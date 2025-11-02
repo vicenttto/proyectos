@@ -1,0 +1,455 @@
+/* ============================================
+  1. RESET BÁSICO MODERNO 
+============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body, h1, h2, h3, h4, p,
+ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.6;
+  min-height: 100vh;
+}
+ul, ol {
+  list-style: none;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* ============================================
+  2. DEFINICIÓN DE DISEÑO (VARIABLES CSS)
+============================================ */
+:root {
+  --color-light: #FFFFFF;
+  --color-bg-body: #F9F9F9;
+  --color-bg-aside: #EAEAEA;
+  --color-dark: #222222;
+  --color-dark-muted: #555555;
+  --color-dark-header: #1D1D1F;
+  --color-accent: #007AFF;
+  --color-accent-hover: #0056b3;
+  --color-border: #DDDDDD;
+
+  --font-base: 'Roboto', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+
+  --fs-base: 1rem;
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-small: 0.875rem;
+  
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --border-radius: 8px;
+  --spacing-base: 1rem;
+}
+
+/* ============================================
+  3. ESTILOS GLOBALES (Aplicando Variables)
+============================================ */
+body {
+  font-family: var(--font-base);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  background-color: var(--color-bg-body);
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-base);
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+p { margin-bottom: var(--spacing-base); }
+
+a {
+  color: var(--color-accent);
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+  4. ESTRUCTURA (Aplicando Variables)
+============================================ */
+.site-header,
+.site-footer {
+  background-color: var(--color-dark-header);
+  color: var(--color-light);
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: auto;
+  font-size: var(--fs-small);
+}
+
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* Anular margen en h1 del header */
+}
+
+/* Enlaces del header */
+.main-nav > ul > li > a {
+  color: var(--color-light);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+.main-nav > ul > li > a:hover {
+  color: var(--color-light);
+  text-decoration: underline;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  width: 100%;
+  min-width: 1000px;
+  max-width: 2000px;
+  margin: calc(var(--spacing-base) * 1.5) auto;
+  padding: 0 var(--spacing-base);
+}
+
+.main-content {
+  flex: 2;
+  min-width: 300px;
+  padding: calc(var(--spacing-base) * 1.5);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+  flex: 1;
+  min-width: 250px;
+  padding: calc(var(--spacing-base) * 1.5);
+  background-color: transparent;
+  margin-left: calc(var(--spacing-base) * 1.5);
+}
+
+/* Footer */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-content p {
+  color: var(--color-bg-aside);
+  margin-bottom: 0;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+.social-links a {
+  color: var(--color-bg-aside);
+  font-size: 1.8rem;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+.social-links a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================
+  5. COMPONENTES
+============================================ */
+/* Iconos */
+.material-symbols-outlined {
+  vertical-align: bottom;
+  font-size: 1.1em;
+  margin-right: 6px;
+}
+.site-header .material-symbols-outlined {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+/* Sidebar */
+.sidebar li {
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+}
+.sidebar .material-symbols-outlined {
+  color: var(--color-dark-muted);
+}
+.sidebar a {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Menú principal */
+.main-nav ul {
+  display: flex;
+}
+.main-nav li {
+  margin-left: 0.5rem;
+}
+
+/* Menú Desplegable */
+.has-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-light);
+  min-width: 200px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+.dropdown-menu li a {
+  color: var(--color-dark);
+  padding: 0.75rem 1.5rem;
+  display: block;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.dropdown-menu li a:hover {
+  background-color: var(--color-bg-aside);
+  color: var(--color-accent);
+}
+.has-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Artículos del Blog */
+.blog-post {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: calc(var(--spacing-base) * 1.5);
+  margin-bottom: calc(var(--spacing-base) * 2);
+}
+.blog-post img {
+  border-radius: var(--border-radius);
+}
+.blog-post h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: var(--fs-h3);
+}
+.blog-post p {
+  margin-bottom: var(--spacing-base);
+}
+.blog-post .read-more {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+}
+.blog-post .read-more:hover {
+  background-color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(var(--spacing-base) * 2);
+  gap: 0.5rem;
+}
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.pagination a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-color: var(--color-accent);
+}
+.pagination a.active {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-color: var(--color-accent);
+  font-weight: var(--fw-bold);
+  pointer-events: none;
+}
+
+/* ============================================
+  6. RESPONSIVIDAD Y MENÚ MÓVIL
+============================================ */
+
+/* --- 1. Estilos del Botón de Hamburguesa --- */
+.mobile-nav-toggle {
+  display: none; /* Oculto en desktop */
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-light);
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* --- 2. Media Query para Móviles/Tablets (Menú) --- */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+  
+  /* --- 3. Estilos del Menú Abierto --- */
+  body.nav-open .main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-header);
+    z-index: 999;
+  }
+  body.nav-open .main-nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  body.nav-open .main-nav a {
+    font-size: var(--fs-h3);
+  }
+  body.nav-open .has-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body.nav-open .dropdown-menu {
+    display: block;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  body.nav-open .dropdown-menu a {
+    font-size: var(--fs-base);
+    color: var(--color-bg-aside);
+  }
+  body.nav-open .mobile-nav-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+  }
+  body.nav-open .wrapper,
+  body.nav-open .site-footer {
+    display: none;
+  }
+}
+
+/* --- 4. Media Query para Estructura (Wrapper, etc.) --- */
+@media (max-width: 1050px) {
+  /* Apila main y aside si la pantalla es casi tan pequeña como el min-width */
+  .wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    margin-left: 0;
+    margin-top: calc(var(--spacing-base) * 1.5);
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Aquí es donde tu 'min-width: 1000px' entra en conflicto.
+     El sitio tendrá scroll horizontal.
+     Si quisieras un diseño responsive REAL, eliminarías 
+     'min-width: 1000px' del .wrapper y descomentarías
+     las siguientes líneas.
+  */
+  /*
+  .wrapper {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+  }
+  */
+}
+
+@media (max-width: 768px) {
+  /* Ajustes responsive generales */
+  .site-header h1 {
+    font-size: var(--fs-h2);
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-content p {
+    margin-bottom: var(--spacing-base);
+  }
+  .main-content, .sidebar {
+    padding: var(--spacing-base);
+  }
+  .blog-post {
+    padding: var(--spacing-base);
+  }
+}
