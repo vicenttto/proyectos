@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maquetación Básica</title>
+    <meta name="description" content="Un boilerplate profesional con Flexbox, Google Fonts e iconos.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <h1>
+                <a href="index.html">
+                    <span class="material-symbols-outlined">code</span>
+                    Mi Sitio Web
+                </a>
+            </h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li class="has-dropdown">
+                        <a href="#">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Diseño Web</a></li>
+                            <li><a href="#">Consultoría SEO</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+
+                <a href="pages/login.html">
+                    <span class="material-symbols-outlined">login</span>
+                    Login
+                </a>
+
+                <a href="pages/registro.html">
+                    <span class="material-symbols-outlined">person_add</span>
+                    Register
+                </a>
+
+                <button class="mobile-nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+
+        <main class="main-content">
+            <h2>Nuestros Últimos Artículos</h2>
+
+            <article class="blog-post">
+                <img src="media/setup.jpg" alt="Una persona trabajando en un ordenador portátil en una oficina moderna."
+                    loading="lazy">
+                <h3>El Futuro del Diseño Web: Tendencias para 2025</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua...</p>
+                <a href="#" class="read-more">Leer más &rarr;</a>
+            </article>
+
+            <article class="blog-post">
+                <img src="media/codigo.jpg" alt="Líneas de código en una pantalla de ordenador." loading="lazy">
+                <h3>Dominando Flexbox y Grid: Guía Completa</h3>
+                <p>Nunc vel risus commodo, euismod nisi id, ultricies mi. Suspendisse potenti. Vivamus at nibh vitae
+                    nibh consequat feugiat...</p>
+                <a href="#" class="read-more">Leer más &rarr;</a>
+            </article>
+
+            <div class="pagination">
+                <a href="#">&laquo; Anterior</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Siguiente &raquo;</a>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                    <a href="#">Enlace A</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                    <a href="#">Enlace B</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">chevron_right</span>
+                    <a href="#">Enlace C</a>
+                </li>
+            </ul>
+        </aside>
+
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 - Mi Sitio Web. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Síguenos en Facebook">
+                    <span class="material-symbols-outlined">facebook</span>
+                </a>
+                <a href="#" aria-label="Síguenos en Twitter">
+                    <span class="material-symbols-outlined">alternate_email</span>
+                </a>
+                <a href="#" aria-label="Síguenos en Instagram">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </a>
+                <a href="#" aria-label="Visita nuestro perfil de LinkedIn">
+                    <span class="material-symbols-outlined">linkedin</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

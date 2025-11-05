@@ -1,0 +1,517 @@
+/* ============================================
+  1. RESET BÁSICO MODERNO 
+  (Quita todos los estilos por defecto del navegador)
+============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+ul,
+ol {
+  list-style: none;
+  /* Quita los puntos de las listas */
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ============================================
+  2. DEFINICIÓN DE DISEÑO (VARIABLES CSS)
+  (Define nuestros colores y fuentes para reusarlos)
+============================================ */
+:root {
+  /* Paleta de Colores */
+  --color-light: #FFFFFF;
+  --color-bg-body: #F9F9F9;
+  --color-bg-aside: #EAEAEA;
+  --color-dark: #222222;
+  --color-dark-muted: #555555;
+  --color-dark-header: #1D1D1F;
+  --color-accent: #007AFF;
+  --color-accent-hover: #0056b3;
+  --color-border: #DDDDDD;
+
+  /* Tipografía (Fuentes) */
+  --font-base: 'Roboto', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --fs-base: 1rem;
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+
+  /* Otros */
+  --border-radius: 8px;
+  --spacing-base: 1rem;
+}
+
+/* ============================================
+  3. ESTILOS GLOBALES
+  (Aplica nuestras variables a la página)
+============================================ */
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg-body);
+  color: var(--color-dark);
+  display: flex;
+  /* Permite usar flexbox para el pie de página "pegajoso" */
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-base);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  margin-bottom: var(--spacing-base);
+}
+
+a {
+  color: var(--color-accent);
+  /* Color azul para enlaces */
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+  4. ESTRUCTURA (Header, Footer, Wrapper)
+============================================ */
+.site-header,
+.site-footer {
+  background-color: var(--color-dark-header);
+  color: var(--color-light);
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+}
+
+.site-footer {
+  margin-top: auto;
+  /* Empuja el footer al final de la página */
+}
+
+/* Contenido de la cabecera (logo + botón) */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  /* Logo a la izq, botón a la der */
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  /* Clave para el menú flotante */
+}
+
+.site-header h1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+/* El contenedor principal que usa Flexbox */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que la barra lateral baje en pantallas pequeñas */
+  flex-grow: 1;
+  /* Ocupa el espacio disponible */
+  width: 100%;
+  min-width: 1000px;
+  /* Ancho mínimo del sitio */
+  max-width: 2000px;
+  /* Ancho máximo del sitio */
+  margin: 20px auto;
+  /* Centra el wrapper */
+  padding: 0 var(--spacing-base);
+}
+
+.main-content {
+  flex: 2;
+  /* Ocupa 2/3 del espacio */
+  min-width: 300px;
+  padding: 1.5rem;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar {
+  flex: 1;
+  /* Ocupa 1/3 del espacio */
+  min-width: 250px;
+  padding: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+/* Estilos del pie de página */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+}
+
+/* Contenedor de acciones (Botones y Menú Hamburguesa) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  /* 1. CENTRADO: Alinea verticalmente los 3 elementos */
+  gap: 0.75rem;
+  /* Espacio entre Login, Register y Menú */
+}
+
+/* Estilos para los botones de Login/Registro */
+.header-actions a {
+  display: inline-flex;
+  /* 2. ICONOS: Clave para alinear icono + texto */
+  align-items: center;
+  /* Centra verticalmente el icono y el texto */
+  gap: 0.35rem;
+  /* Espacio *entre* el icono y el texto */
+
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajuste para los iconos DENTRO de los botones */
+.header-actions a .material-symbols-outlined {
+  margin-right: 0;
+  /* Anula el 'margin-right: 6px' global */
+  /* 'vertical-align: bottom' (global) no importa gracias a flex */
+}
+
+/* El Hover (sigue igual) */
+.header-actions a:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+/* ============================================
+  5. COMPONENTES (Artículos, Paginación, etc.)
+============================================ */
+
+/* Iconos (tamaño general) */
+.material-symbols-outlined {
+  vertical-align: bottom;
+  font-size: 1.1em;
+  margin-right: 6px;
+}
+
+.site-header .material-symbols-outlined {
+  font-size: 1.5em;
+  /* Icono del logo más grande */
+}
+
+/* Barra lateral */
+.sidebar li {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .material-symbols-outlined {
+  color: var(--color-dark-muted);
+}
+
+.sidebar a {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: var(--color-accent);
+}
+
+/* Artículos del Blog */
+.blog-post {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  /* (Aquí estaban las reglas de fondo/sombra, 
+     pero las quitamos en la última versión. 
+     Si quieres las tarjetas de vuelta, avísame) */
+}
+
+.blog-post img {
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.blog-post .read-more {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+}
+
+.blog-post .read-more:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-dark);
+}
+
+.pagination a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-color: var(--color-accent);
+}
+
+.pagination a.active {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-color: var(--color-accent);
+  pointer-events: none;
+  /* No se puede hacer clic en la página actual */
+}
+
+/* ============================================
+  6. MENÚ FLOTANTE (GLOBAL)
+  (Controlado por JS)
+============================================ */
+
+/* 1. Oculta el nav y muestra el botón SIEMPRE */
+.main-nav {
+  display: none;
+  /* Oculto por defecto */
+}
+
+.mobile-nav-toggle {
+  display: block;
+  /* Muestra el botón hamburguesa */
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-light);
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 2. Estilos del Menú CUANDO ESTÁ ABIERTO */
+/* (Cuando JS añade la clase 'nav-open' al body) */
+body.nav-open .main-nav {
+  display: block;
+  position: absolute;
+  /* Posición flotante */
+  top: 100%;
+  /* Justo debajo del header */
+  right: 0;
+  /* Pegado a la derecha */
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Sombra */
+  min-width: 250px;
+  z-index: 999;
+}
+
+/* Estilos de los enlaces dentro del menú abierto */
+body.nav-open .main-nav ul {
+  flex-direction: column;
+}
+
+body.nav-open .main-nav a {
+  font-size: var(--fs-base);
+  color: var(--color-dark);
+  /* Texto oscuro */
+  display: block;
+  padding: 0.75rem 1.5rem;
+}
+
+body.nav-open .main-nav a:hover {
+  color: var(--color-accent);
+  background-color: var(--color-bg-body);
+  text-decoration: none;
+}
+
+/* Submenú (Servicios) dentro del menú abierto */
+body.nav-open .dropdown-menu {
+  display: block;
+  position: static;
+  background: none;
+  box-shadow: none;
+  border-top: 1px solid var(--color-border);
+  /* Línea separadora */
+}
+
+body.nav-open .dropdown-menu a {
+  color: var(--color-dark-muted);
+  padding-left: 2.5rem;
+  /* Sangría para diferenciar */
+}
+
+/* 3. Permite interactuar con la página mientras el menú está abierto */
+body.nav-open .wrapper,
+body.nav-open .site-footer {
+  display: block;
+  /* O 'flex' si era flex, lo importante es que no sea 'none' */
+}
+
+/* Re-aplicamos 'flex' al wrapper que lo necesita */
+body.nav-open .wrapper {
+  display: flex;
+}
+
+/* ============================================
+  7. RESPONSIVIDAD (SOLO PARA ESTRUCTURA)
+============================================ */
+/* Cuando la pantalla es más pequeña de 1050px... */
+@media (max-width: 1050px) {
+
+  /* Apila el contenido y la barra lateral */
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Aquí es donde tu 'min-width: 1000px' entra en conflicto.
+     El sitio tendrá scroll horizontal.
+     Si quisieras un diseño responsive REAL, eliminarías 
+     'min-width: 1000px' del .wrapper
+  */
+}
+
+@media (max-width: 768px) {
+
+  /* Ajustes responsive generales (YA NO INCLUYE EL MENÚ) */
+  .site-header h1 {
+    font-size: var(--fs-h2);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-content p {
+    margin-bottom: var(--spacing-base);
+  }
+
+  .main-content,
+  .sidebar {
+    padding: var(--spacing-base);
+  }
+
+  .blog-post {
+    padding: var(--spacing-base);
+  }
+}
+
+/* ============================================
+  8. ANIMACIÓN DE CARGA DEL LOGO
+============================================ */
+.site-header h1 {
+  /* 1. Estado inicial: invisible y movido */
+  opacity: 0;
+  transform: translateX(-20px);
+  /* 2. La transición que se aplicará */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.site-header h1.logo-visible {
+  /* 3. Estado final: visible y en su sitio */
+  opacity: 1;
+  transform: translateX(0);
+}

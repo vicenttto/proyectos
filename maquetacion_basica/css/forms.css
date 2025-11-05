@@ -1,0 +1,184 @@
+/* ============================================
+  ESTILOS PARA FORMULARIOS (Login, Registro...)
+============================================ */
+
+/* 1. El contenedor del formulario */
+.form-container {
+    /* Usamos 'flex' en el wrapper para centrar fácilmente */
+    flex-grow: 1;
+    /* Ocupa el espacio disponible */
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    padding: 2rem 1rem;
+    /* Espacio por si la pantalla es pequeña */
+}
+
+/* 2. La tarjeta del formulario */
+.form-container form {
+    max-width: 450px;
+    width: 100%;
+    padding: 2.5rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: var(--fs-h2);
+}
+
+.form-container p {
+    text-align: center;
+    color: var(--color-dark-muted);
+    margin-bottom: 2rem;
+}
+
+/* 3. Grupos de Label + Input */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    /* 'bold' de Roboto */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-body);
+    /* Fondo gris claro */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto visual al seleccionar el input */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+    /* Sombra azul suave */
+}
+
+/* 4. Botón principal del formulario */
+.form-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    font-family: var(--font-heading);
+    /* Fuente Montserrat */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* 5. Enlaces inferiores (Olvidé contraseña, etc.) */
+.form-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-link {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+  6. ESTILOS PARA INPUT CON ICONO (Ver contraseña)
+============================================ */
+
+/* 1. El contenedor relativo para posicionar el icono */
+.input-with-icon {
+    position: relative;
+}
+
+/* 2. Damos espacio extra a la DERECHA del input para que el icono quepa */
+.input-with-icon input {
+    padding-right: 3.5rem;
+    /* Ajusta esto si el icono es muy grande */
+}
+
+/* 3. Posicionamos el icono */
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    /* A 1rem del borde derecho */
+    transform: translateY(-50%);
+    /* Truco para centrar verticalmente */
+
+    color: var(--color-dark-muted);
+    cursor: pointer;
+    user-select: none;
+    /* Evita que el icono se "seleccione" como texto */
+}
+
+.password-toggle-icon:hover {
+    color: var(--color-dark);
+}
+
+/* ============================================
+  7. ESTILOS PARA CHECKBOX (LOPD)
+============================================ */
+
+.form-group-checkbox {
+    display: flex;
+    /* Alinea el checkbox arriba con la primera línea de texto */
+    align-items: flex-start;
+    gap: 0.75rem;
+    /* Espacio entre el check y el texto */
+    margin-bottom: 1.5rem;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    /* Hacemos el checkbox un poco más grande y fácil de clicar */
+    width: 1.25rem;
+    height: 1.25rem;
+    /* Pequeño ajuste para que se alinee verticalmente con el texto */
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    /* Evita que el checkbox se encoja */
+}
+
+.form-group-checkbox label {
+    font-size: 0.9rem;
+    /* Texto ligeramente más pequeño */
+    color: var(--color-dark-muted);
+    line-height: 1.5;
+    /* Más espacio si el texto ocupa 2 líneas */
+}
+
+/* El enlace debe destacar */
+.form-group-checkbox label a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.form-group-checkbox label a:hover {
+    color: var(--color-accent-hover);
+}
