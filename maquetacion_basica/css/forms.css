@@ -4,16 +4,11 @@
 
 /* 1. El contenedor del formulario */
 .form-container {
-    /* Usamos 'flex' en el wrapper para centrar fácilmente */
     flex-grow: 1;
-    /* Ocupa el espacio disponible */
     display: flex;
     align-items: center;
-    /* Centra verticalmente */
     justify-content: center;
-    /* Centra horizontalmente */
     padding: 2rem 1rem;
-    /* Espacio por si la pantalla es pequeña */
 }
 
 /* 2. La tarjeta del formulario */
@@ -47,7 +42,6 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    /* 'bold' de Roboto */
 }
 
 .form-group input {
@@ -56,7 +50,6 @@
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     background-color: var(--color-bg-body);
-    /* Fondo gris claro */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -65,7 +58,6 @@
     outline: none;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
-    /* Sombra azul suave */
 }
 
 /* 4. Botón principal del formulario */
@@ -77,7 +69,6 @@
     background-color: var(--color-accent);
     color: var(--color-light);
     font-family: var(--font-heading);
-    /* Fuente Montserrat */
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
@@ -112,30 +103,22 @@
   6. ESTILOS PARA INPUT CON ICONO (Ver contraseña)
 ============================================ */
 
-/* 1. El contenedor relativo para posicionar el icono */
 .input-with-icon {
     position: relative;
 }
 
-/* 2. Damos espacio extra a la DERECHA del input para que el icono quepa */
 .input-with-icon input {
     padding-right: 3.5rem;
-    /* Ajusta esto si el icono es muy grande */
 }
 
-/* 3. Posicionamos el icono */
 .password-toggle-icon {
     position: absolute;
     top: 50%;
     right: 1rem;
-    /* A 1rem del borde derecho */
     transform: translateY(-50%);
-    /* Truco para centrar verticalmente */
-
     color: var(--color-dark-muted);
     cursor: pointer;
     user-select: none;
-    /* Evita que el icono se "seleccione" como texto */
 }
 
 .password-toggle-icon:hover {
@@ -148,32 +131,24 @@
 
 .form-group-checkbox {
     display: flex;
-    /* Alinea el checkbox arriba con la primera línea de texto */
     align-items: flex-start;
     gap: 0.75rem;
-    /* Espacio entre el check y el texto */
     margin-bottom: 1.5rem;
 }
 
 .form-group-checkbox input[type="checkbox"] {
-    /* Hacemos el checkbox un poco más grande y fácil de clicar */
     width: 1.25rem;
     height: 1.25rem;
-    /* Pequeño ajuste para que se alinee verticalmente con el texto */
     margin-top: 0.15rem;
     flex-shrink: 0;
-    /* Evita que el checkbox se encoja */
 }
 
 .form-group-checkbox label {
     font-size: 0.9rem;
-    /* Texto ligeramente más pequeño */
     color: var(--color-dark-muted);
     line-height: 1.5;
-    /* Más espacio si el texto ocupa 2 líneas */
 }
 
-/* El enlace debe destacar */
 .form-group-checkbox label a {
     color: var(--color-accent);
     text-decoration: underline;
@@ -181,4 +156,38 @@
 
 .form-group-checkbox label a:hover {
     color: var(--color-accent-hover);
+}
+
+/* ============================================
+  8. ESTILOS DE ERROR 
+============================================ */
+
+/* El texto rojo que aparece debajo del input */
+.form-error-message {
+    color: #D93025;
+    /* Rojo de error */
+    font-size: 0.875rem;
+    /* Pequeño */
+    margin-top: 0.25rem;
+    min-height: 1.2em;
+    /* Reserva espacio para que el formulario no "salte" */
+}
+
+/* El borde rojo para el input con error */
+.form-group input.input-error {
+    border-color: #D93025;
+}
+
+/* Sombra roja al hacer foco en un input con error */
+.form-group input.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.2);
+}
+
+/* Mensaje de error para el checkbox LOPD */
+span#lopd-error {
+    display: block;
+    /* Para que ocupe su propia línea */
+    margin-top: -1rem;
+    /* Lo acerca al checkbox */
+    margin-bottom: 1rem;
 }
