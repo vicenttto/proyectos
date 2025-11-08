@@ -89,8 +89,27 @@ Para ejecutar este proyecto localmente y conectarlo a tu propio backend de Fireb
 ## 📁 Estructura de Archivos
 
 <details>
-<summary><strong>Haz clic para ver la estructura de archivos del proyecto</strong></summary>
+<summary><strong>Haz clic para ver la estructura</strong></summary>
+
 <br>
-/ ├── index.html (Página de inicio) ├── css/ │ ├── styles.css (Estilos principales de la web) │ └── forms.css (Estilos para login/registro) ├── js/ │ ├── script.js (JS para el menú y animaciones del index) │ └── auth.js (JS para la lógica de Firebase y formularios) ├── pages/ │ ├── login.html (Página de inicio de sesión) │ └── registro.html (Página de registro) └── media/ ├── setup.jpg (Imagen del artículo 1) ├── codigo.jpg (Imagen del artículo 2) └── favicon.ico (Icono de la pestaña)
+
+```
+/
+├─ index.html
+├─ README.md
+├─ css/
+│  ├─ styles.css
+│  └─ forms.css
+├─ js/
+│  ├─ script.js
+│  └─ auth.js
+├─ pages/
+│  ├─ login.html
+│  └─ registro.html
+└─ media/
+   ├─ setup.jpg
+   ├─ codigo.jpg
+   └─ favicon.ico
+```
 
 </details>
