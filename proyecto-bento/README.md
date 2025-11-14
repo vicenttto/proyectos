@@ -26,4 +26,8 @@ El objetivo es demostrar el uso de **CSS Grid anidado**, **variables CSS** para 
 │   └── main.css        # Estilos principales, layout y componentes. Importa _variables.css
 └── images/             # Assets visuales
 ```
+## 📸 Preview 
+
+<img width="1427" height="825" alt="preview" src="https://github.com/user-attachments/assets/5148782a-aaeb-447b-92b6-1477ba3e3cdb" />
+
 
