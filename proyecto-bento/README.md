@@ -27,8 +27,3 @@ El objetivo es demostrar el uso de **CSS Grid anidado**, **variables CSS** para 
 └── images/             # Assets visuales
 ```
 
-## 🚀 Cómo Empezar
-
-1.  Clona este repositorio.
-2.  Abre `index.html` en tu navegador.
-3.  ¡No se requiere compilación! Todo es HTML y CSS nativo.
