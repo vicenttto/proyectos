@@ -1,0 +1,184 @@
+/**
+ * @file main.css
+ * @description Hoja de estilos principal.
+ * 1. Importa las variables (tokens).
+ * 2. Define estilos globales (reset).
+ * 3. Construye el layout del Grid (Nivel 1 y Nivel 2).
+ * 4. Estila los componentes (bento-item).
+ */
+
+/* * --- 1. IMPORTACIÓN ---
+ * Trae todos los tokens de diseño definidos en el archivo "partial".
+ */
+@import url('_variables.css');
+
+/* * --- 2. ESTILOS BASE Y RESET ---
+ * Asegura una base consistente en todos los navegadores.
+ */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 2rem;
+    /* Añade espacio en los bordes de la ventana */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+/* * --- 3. LAYOUT: GRID PRINCIPAL (NIVEL 1) ---
+ * '.bento-container' es el grid padre que contiene las 3 áreas.
+ * Usamos CSS Anidado para las media queries.
+ */
+.bento-container {
+    display: grid;
+    gap: var(--grid-gap);
+    max-width: 1400px;
+    margin: 2rem auto;
+    /* Centra el contenedor */
+
+    /* * [BREAKPOINT] Desktop (> 700px)
+     * Layout de 3 columnas (1fr 1fr 1fr).
+     */
+    @media (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* * [BREAKPOINT] Mobile (< 700px)
+     * Layout de 1 columna (stack).
+     */
+    @media (max-width: 699.9px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* * --- 4. LAYOUT: GRIDS ANIDADOS (NIVEL 2) ---
+ * '.bento-area' es el contenedor de las celdas (items).
+ * Cada '.bento-area' es un grid independiente.
+ */
+.bento-area {
+    display: grid;
+    gap: var(--grid-gap);
+    /* Permite que las filas crezcan según el contenido, con un mínimo. */
+    grid-auto-rows: minmax(100px, auto);
+}
+
+/* * --- 5. COMPONENTE: CELDA (Bento Item) ---
+ * '.bento-item' es el estilo visual de cada celda individual.
+ */
+.bento-item {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: var(--padding-item);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    /* Clave para que las imágenes no rompan el border-radius */
+
+    /* Micro-interacción al pasar el ratón */
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Estilos de texto internos (usando anidamiento) */
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    /* Estilos para imágenes dentro de una celda */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Asegura que la imagen llene la celda sin deformarse */
+    }
+}
+
+
+/* * --- 6. DEFINICIONES DE LAYOUT (GRID NIVEL 2) ---
+ * Aquí es donde ocurre la magia del "Bento".
+ * Usamos los IDs (#area-1, #area-2, #area-3) para aplicar
+ * layouts únicos a los items que contienen.
+ */
+
+/* --- Layout del Área 1 (Izquierda) --- */
+#area-1 {
+    grid-template-columns: 1fr 1fr;
+    /* Base de 2 columnas */
+
+    /* Celda de Batería: ocupa la fila completa */
+    .item-1 {
+        grid-column: 1 / -1;
+        /* Va desde la línea 1 hasta la última (-1) */
+        background-color: var(--color-accent);
+
+        /* Estilo destacado */
+        h3,
+        p {
+            color: white;
+        }
+    }
+
+    /* .item-2 y .item-3 ocupan 1x1 por defecto */
+
+    /* Celda de Display: ocupa fila completa y 2 filas de alto */
+    .item-4 {
+        grid-column: 1 / -1;
+        grid-row: span 2;
+        padding: 0;
+        /* Quita padding para que la imagen llene la celda */
+    }
+}
+
+/* --- Layout del Área 2 (Centro) --- */
+#area-2 {
+    grid-template-columns: 1fr 1fr;
+    /* Base de 2 columnas */
+
+    /* .item-5 y .item-6 ocupan 1x1 por defecto */
+
+    /* Celda de Laptop: La más grande, ocupa 4 unidades de fila de alto */
+    .item-7 {
+        grid-column: 1 / -1;
+        grid-row: span 4;
+        padding: 0;
+    }
+}
+
+/* --- Layout del Área 3 (Derecha) --- */
+#area-3 {
+    grid-template-columns: 1fr 1fr;
+    /* Base de 2 columnas */
+
+    .item-8 {
+        grid-column: 1 / -1;
+
+    }
+
+    /* Celda de Tamaños: Fila completa */
+    .item-9 {
+        grid-column: 1 / -1;
+    }
+
+    /* .item-10 y .item-11 ocupan 1x1 */
+
+    /* Celda de Teclado: Fila completa */
+    .item-12 {
+        grid-column: 1 / -1;
+    }
+}
