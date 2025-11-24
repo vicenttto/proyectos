@@ -4,6 +4,12 @@ Este proyecto es una implementación de un "Bento Grid" (similar al de Apple) ut
 
 El objetivo es demostrar el uso de **CSS Grid anidado**, **variables CSS** para "theming" (modo claro/oscuro) y **CSS anidado** para una mejor organización del código.
 
+## 🚀 Demo en Vivo
+
+Puedes ver el proyecto desplegado y funcionando aquí:
+
+[![Ver Demo](https://img.shields.io/badge/GitHub_Pages-Ver_Demo_Online-2ea44f?style=for-the-badge&logo=github)](https://vicenttto.github.io/proyectos/proyecto-bento/)
+
 ## ✨ Características
 
 - **Bento Grid Layout:** Un diseño de dashboard visualmente atractivo.
