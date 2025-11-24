@@ -10,7 +10,7 @@
 /* * --- 1. IMPORTACIÓN ---
  * Trae todos los tokens de diseño definidos en el archivo "partial".
  */
-@import url('_variables.css');
+@import url('variables.css');
 
 /* * --- 2. ESTILOS BASE Y RESET ---
  * Asegura una base consistente en todos los navegadores.
