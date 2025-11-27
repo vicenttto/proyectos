@@ -1,7 +1,7 @@
 # Proyecto de Maquetación Básica con Firebase
 
 <p align="center">
-  <a href="https://vicenttto.github.io/proyectos/">
+  <a href="https://vicenttto.github.io/proyectos/docs/">
     <img alt="Ver Sitio en Vivo" src="https://img.shields.io/badge/Ver_Sitio_en_Vivo-007AFF?style=for-the-badge&logo=githubpages&logoColor=white">
   </a>
 </p>
