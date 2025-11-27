@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqueta Cisco NetAcad - Práctica Bootstrap</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Carreras</a></li>
+                </ul>
+            </div>
+
+            <a class="navbar-brand mx-auto fw-bold text-primary" href="#">
+                <i class="fa-brands fa-cisco"></i> Networking Academy
+            </a>
+
+            <div class="d-flex gap-3 align-items-center">
+                <a href="#" class="text-dark"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="text-dark"><i class="fa-solid fa-globe"></i></a>
+                <a href="#" class="btn btn-outline-primary btn-sm">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="card text-white border-0 rounded-0 mb-5">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img hero-img rounded-0" alt="Hero" loading="lazy">
+
+        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="display-3 fw-bold" data-aos="fade-down">Empodera tu futuro</h1>
+            <p class="card-text fs-4" data-aos="fade-up">Habilidades tecnológicas para un mundo conectado.</p>
+            <button class="btn btn-warning btn-lg mt-3" data-aos="zoom-in">Empezar ahora</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="row align-items-center mb-5" data-aos="fade-right">
+            <div class="col-md-6 p-5">
+                <h3>Aprende Ciberseguridad</h3>
+                <p>Protege el mundo digital. Nuestros cursos te llevan desde lo básico hasta la defensa avanzada de
+                    redes.</p>
+                <a href="#" class="btn btn-link">Ver curso &rarr;</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+                    class="img-fluid rounded shadow checker-img" alt="Security" loading="lazy">
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5" data-aos="fade-left">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80"
+                    class="img-fluid rounded shadow checker-img" alt="Networking" loading="lazy">
+            </div>
+            <div class="col-md-6 p-5">
+                <h3>Infraestructura de Redes</h3>
+                <p>Conecta el mundo. Domina el enrutamiento, la conmutación y la infraestructura inalámbrica.</p>
+                <a href="#" class="btn btn-link">Ver curso &rarr;</a>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5" data-aos="fade-right">
+            <div class="col-md-6 p-5">
+                <h3>Programación en Python</h3>
+                <p>El lenguaje del futuro. Automatiza tareas, analiza datos y crea aplicaciones increíbles.</p>
+                <a href="#" class="btn btn-link">Ver curso &rarr;</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80"
+                    class="img-fluid rounded shadow checker-img" alt="Python" loading="lazy">
+            </div>
+        </div>
+    </div>
+    <section class="bg-primary text-white py-5 mb-5">
+        <div class="container text-center" data-aos="zoom-in">
+            <h2>Únete a millones de estudiantes</h2>
+            <p class="lead">Networking Academy es una comunidad global.</p>
+            <button class="btn btn-light mt-2">Más información</button>
+        </div>
+    </section>
+
+    <div class="container mb-5">
+        <h3 class="text-center mb-4">Explora por Categoría (Haz clic en la imagen)</h3>
+        <div class="row g-4">
+
+            <div class="col-12 col-md-3 text-center">
+                <img src="https://placehold.co/300x200/00bceb/white?text=IoT" class="img-fluid rounded pointer mb-2"
+                    data-bs-toggle="collapse" data-bs-target="#info1" alt="IoT Icon">
+                <div class="collapse" id="info1">
+                    <div class="card card-body border-0 bg-light shadow-sm">
+                        Internet de las cosas
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 text-center">
+                <img src="https://placehold.co/300x200/1d273e/white?text=OS" class="img-fluid rounded pointer mb-2"
+                    data-bs-toggle="collapse" data-bs-target="#info2" alt="OS Icon">
+                <div class="collapse" id="info2">
+                    <div class="card card-body border-0 bg-light shadow-sm">
+                        Sistemas Operativos
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 text-center">
+                <img src="https://placehold.co/300x200/00bceb/white?text=IT" class="img-fluid rounded pointer mb-2"
+                    data-bs-toggle="collapse" data-bs-target="#info3" alt="Business Icon">
+                <div class="collapse" id="info3">
+                    <div class="card card-body border-0 bg-light shadow-sm">
+                        Negocios IT
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 text-center">
+                <img src="https://placehold.co/300x200/1d273e/white?text=Redes" class="img-fluid rounded pointer mb-2"
+                    data-bs-toggle="collapse" data-bs-target="#info4" alt="Network Icon">
+                <div class="collapse" id="info4">
+                    <div class="card card-body border-0 bg-light shadow-sm">
+                        Simulación de Redes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+
+            <div class="d-none d-md-flex justify-content-center gap-5 fs-2">
+                <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-white"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="accordion accordion-flush d-md-none text-dark" id="accordionSocial">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSocial">
+                            Redes Sociales
+                        </button>
+                    </h2>
+                    <div id="collapseSocial" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
+                        <div class="accordion-body d-flex justify-content-around fs-3">
+                            <a href="#" class="text-primary"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="text-info"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="text-primary"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="text-danger"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar animación al hacer scroll
+        AOS.init({
+            duration: 1000, // Duración de la animación en ms
+            once: true      // Animar solo una vez al bajar
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+/* =========================================
+   1. IDENTIDAD DE MARCA (Colores & Variables)
+========================================= */
+:root {
+    --cisco-blue: #00bceb;
+    /* Azul brillante Cisco */
+    --cisco-dark: #1d273e;
+    /* Azul oscuro corporativo */
+    --cisco-gray: #f2f2f2;
+    /* Fondo suave */
+    --text-color: #393939;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Botones: Sobreescribimos Bootstrap para usar el azul exacto */
+.btn-primary,
+.btn-outline-primary:hover {
+    background-color: var(--cisco-blue);
+    border-color: var(--cisco-blue);
+}
+
+.btn-outline-primary {
+    color: var(--cisco-blue);
+    border-color: var(--cisco-blue);
+}
+
+.text-primary {
+    color: var(--cisco-blue) !important;
+}
+
+/* Navbar: Logo y enlaces */
+.navbar-brand {
+    color: var(--cisco-dark) !important;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* =========================================
+   2. COMPONENTES VISUALES (Hero & Damero)
+========================================= */
+
+/* Hero Section */
+.hero-img {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Degradado sobre la imagen Hero para mejorar lectura del texto blanco */
+.card-img-overlay {
+    background: linear-gradient(to bottom, rgba(29, 39, 62, 0.3), rgba(29, 39, 62, 0.8));
+}
+
+/* Imágenes del Damero */
+.checker-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover en imágenes del damero */
+.checker-img:hover {
+    transform: translateY(-5px);
+    /* Flota hacia arriba */
+    box-shadow: 0 15px 30px rgba(0, 188, 235, 0.2);
+    /* Sombra azulada */
+}
+
+/* =========================================
+   3. INTERACTIVIDAD (Collapse & Footer)
+========================================= */
+
+/* Indicador visual de clic */
+.pointer {
+    cursor: pointer;
+    transition: opacity 0.2s, border-color 0.2s;
+    border: 3px solid transparent;
+    /* Borde invisible preparado */
+}
+
+.pointer:hover {
+    opacity: 0.9;
+    border-color: var(--cisco-blue);
+    /* Borde azul al pasar el mouse */
+}
+
+/* Estilo interior del Collapse */
+.collapse .card-body {
+    border-left: 4px solid var(--cisco-blue) !important;
+    font-weight: 600;
+    color: var(--cisco-dark);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cisco-dark) !important;
+}
+
+footer a i {
+    transition: transform 0.2s;
+}
+
+footer a:hover i {
+    transform: scale(1.2);
+    /* Icono crece ligeramente */
+    color: var(--cisco-blue) !important;
+}
+
