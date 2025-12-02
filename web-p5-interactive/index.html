@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Tokyo Experience</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+</head>
+
+<body>
+
+    <div id="canvas-container"></div>
+
+    <div class="web-content">
+
+        <nav class="glass-panel">
+            <div class="logo">NEO·TOKYO</div>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#gallery">Personajes</a></li>
+                <li><a href="#contact">Unirse</a></li>
+            </ul>
+        </nav>
+
+        <header id="home" class="hero-section">
+            <div class="glass-card">
+                <h1>El futuro es ahora</h1>
+                <p>Explora la fusión entre el arte digital y la interactividad generativa.</p>
+                <button class="cta-button">Iniciar Sistema</button>
+            </div>
+        </header>
+
+        <section id="gallery" class="gallery-section">
+            <h2 class="section-title">Archivos de la Red</h2>
+            <div class="grid-gallery">
+                <div class="character-card glass-panel">
+                    <img src="assets/img/city.jpg"
+                        alt="Cyberpunk City">
+                    <h3>Sector 01</h3>
+                    <p>Distrito central bajo vigilancia.</p>
+                </div>
+                <div class="character-card glass-panel">
+                    <img src="assets/img/android.jpg"
+                        alt="Cyberpunk Android">
+                    <h3>Androide A-2</h3>
+                    <p>Inteligencia artificial generativa.</p>
+                </div>
+                <div class="character-card glass-panel">
+                    <img src="assets/img/neon.jpg"
+                        alt="Neon Lights">
+                    <h3>Neon Vibes</h3>
+                    <p>Energía pura en la red.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="form-wrapper glass-panel">
+                <h2>Conexión Segura</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="name">Alias</label>
+                        <input type="text" id="name" placeholder="Tu nombre clave...">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Frecuencia (Email)</label>
+                        <input type="email" id="email" placeholder="usuario@red.com">
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Datos</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="glass-panel">
+            <p>&copy; 2025 Proyecto Web + P5.js Integrado</p>
+        </footer>
+
+    </div>
+
+    <script src="js/sketch.js"></script>
+
+</body>
+
+</html>
