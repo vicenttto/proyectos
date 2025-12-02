@@ -1,7 +1,7 @@
 # 🌐 Pinterest Murcia - Práctica Layout Grid & Flexbox
 
 <p align="center">
-  <a href="https://vicenttto.github.io/proyectos/bootstrap/index.html">
+  <a href="https://vicenttto.github.io/proyectos/pinterest-murcia/index.html">
     <img alt="Ver Sitio en Vivo" src="https://img.shields.io/badge/Ver_Sitio_en_Vivo-007AFF?style=for-the-badge&logo=githubpages&logoColor=white">
   </a>
 </p>
