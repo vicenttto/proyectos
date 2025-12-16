@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Añadir un "escuchador de clics" al botón
         mobileNavToggle.addEventListener('click', () => {
 
-            // 4. La magia: Pone o quita la clase 'nav-open' en el <body>
+            // 4. Pone o quita la clase 'nav-open' en el <body>
             document.body.classList.toggle('nav-open');
 
             // 5. Cambiar el icono (de 'menu' a 'close' y viceversa)

@@ -1,6 +1,9 @@
 /* ============================================
   1. RESET BÁSICO MODERNO 
   (Quita todos los estilos por defecto del navegador)
+  
+  Normalización propia: Elimino márgenes y paddings por defecto de los navegadores
+   para tener control total del diseño.
 ============================================ */
 *,
 *::before,
@@ -154,7 +157,7 @@ a:hover {
   align-items: center;
   margin: 0 auto;
   position: relative;
-  /* Clave para el menú flotante */
+  
 }
 
 .site-header h1 {
@@ -249,8 +252,6 @@ a:hover {
 /* Ajuste para los iconos DENTRO de los botones */
 .header-actions a .material-symbols-outlined {
   margin-right: 0;
-  /* Anula el 'margin-right: 6px' global */
-  /* 'vertical-align: bottom' (global) no importa gracias a flex */
 }
 
 /* El Hover (sigue igual) */
@@ -299,9 +300,7 @@ a:hover {
 .blog-post {
   padding: 1.5rem;
   margin-bottom: 2rem;
-  /* (Aquí estaban las reglas de fondo/sombra, 
-     pero las quitamos en la última versión. 
-     Si quieres las tarjetas de vuelta, avísame) */
+  
 }
 
 .blog-post img {
@@ -357,7 +356,6 @@ a:hover {
   color: var(--color-light);
   border-color: var(--color-accent);
   pointer-events: none;
-  /* No se puede hacer clic en la página actual */
 }
 
 /* ============================================
@@ -368,7 +366,6 @@ a:hover {
 /* 1. Oculta el nav y muestra el botón SIEMPRE */
 .main-nav {
   display: none;
-  /* Oculto por defecto */
 }
 
 .mobile-nav-toggle {
@@ -449,7 +446,7 @@ body.nav-open .wrapper {
 }
 
 /* ============================================
-  7. RESPONSIVIDAD (SOLO PARA ESTRUCTURA)
+  7. RESPONSIVIDAD 
 ============================================ */
 /* Cuando la pantalla es más pequeña de 1050px... */
 @media (max-width: 1050px) {
@@ -466,16 +463,12 @@ body.nav-open .wrapper {
 }
 
 @media (max-width: 1000px) {
-  /* Aquí es donde tu 'min-width: 1000px' entra en conflicto.
-     El sitio tendrá scroll horizontal.
-     Si quisieras un diseño responsive REAL, eliminarías 
-     'min-width: 1000px' del .wrapper
-  */
+  
 }
 
 @media (max-width: 768px) {
 
-  /* Ajustes responsive generales (YA NO INCLUYE EL MENÚ) */
+  /* Ajustes responsive generales   */
   .site-header h1 {
     font-size: var(--fs-h2);
   }

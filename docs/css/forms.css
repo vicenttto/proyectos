@@ -53,7 +53,7 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto visual al seleccionar el input */
+/* Efecto visual al seleccionar el input. Cambio border y sombra */
 .form-group input:focus {
     outline: none;
     border-color: var(--color-accent);
@@ -102,7 +102,7 @@
 /* ============================================
   6. ESTILOS PARA INPUT CON ICONO (Ver contraseña)
 ============================================ */
-
+/* Uso de posicionamiento absoluto para colocar el icono de 'ver contraseña' DENTRO del campo de texto */
 .input-with-icon {
     position: relative;
 }
@@ -170,7 +170,6 @@
     /* Pequeño */
     margin-top: 0.25rem;
     min-height: 1.2em;
-    /* Reserva espacio para que el formulario no "salte" */
 }
 
 /* El borde rojo para el input con error */

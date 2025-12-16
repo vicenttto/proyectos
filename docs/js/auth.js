@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // ¡Usuario creado en el sistema de Auth!
                     const user = userCredential.user;
 
-                    // 5. REQUISITO: Guardar los datos del registro en la Base de Datos (Firestore)
+                    // 5.  Despliegue: Guardar los datos del registro en la Base de Datos (Firestore)
                     return db.collection("users").doc(user.uid).set({
                         name: name,
                         email: email,
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // ¡Login correcto!
                     const user = userCredential.user;
 
-                    // 5. REQUISITO: Guardar la fecha y hora de entrada al sistema
+                    // 5. Despliegue: Guardar la fecha y hora de entrada al sistema
                     return db.collection("login_history").add({
                         userId: user.uid,
                         email: user.email,
@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const inputWrapper = icon.parentElement;
             const input = inputWrapper.querySelector('input');
             if (input) {
+                // Si es 'password' (oculto) lo cambio a 'text' (visible), y cambio el icono
                 if (input.type === 'password') {
                     input.type = 'text';
                     icon.textContent = 'visibility_off';
