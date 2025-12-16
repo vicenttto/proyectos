@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Seleccionamos el contenedor de la galería (para poder reordenar los hijos)
     const galleryContainer = document.getElementById('gallery');
 
-    // 3. Añadimos un "escucha" (listener) a cada botón
+    // 3. Añadimos un listener a cada botón
     likeButtons.forEach(button => {
         button.addEventListener('click', function (event) {
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // prepend() MUEVE el elemento del DOM, no lo clona.
                 galleryContainer.prepend(card);
 
-                // Opcional: Hacer scroll suave hacia la tarjeta movida para que el usuario no se pierda
+                // Hacer scroll suave hacia la tarjeta movida para que el usuario no se pierda
                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             } else {
