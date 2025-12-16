@@ -43,15 +43,15 @@ p {
     margin: 2rem auto;
     /* Centra el contenedor */
 
-    /* * [BREAKPOINT] Desktop (> 700px)
-     * Layout de 3 columnas (1fr 1fr 1fr).
+    /* Desktop (> 700px)
+     * Layout de 3 columnas .
      */
     @media (min-width: 700px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* * [BREAKPOINT] Mobile (< 700px)
-     * Layout de 1 columna (stack).
+    /*  Mobile (< 700px)
+     * Layout de 1 columna .
      */
     @media (max-width: 699.9px) {
         grid-template-columns: 1fr;
@@ -86,7 +86,7 @@ p {
         transform: translateY(-5px);
     }
 
-    /* Estilos de texto internos (usando anidamiento) */
+    /* Estilos de texto internos */
     h3 {
         font-size: 1.2rem;
         font-weight: 600;
@@ -111,7 +111,6 @@ p {
 
 
 /* * --- 6. DEFINICIONES DE LAYOUT (GRID NIVEL 2) ---
- * Aquí es donde ocurre la magia del "Bento".
  * Usamos los IDs (#area-1, #area-2, #area-3) para aplicar
  * layouts únicos a los items que contienen.
  */

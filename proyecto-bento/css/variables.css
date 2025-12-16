@@ -2,8 +2,7 @@
  * @file _variables.css
  * @description Almacena todos los "Design Tokens" (constantes de diseño) del proyecto.
  * Define colores, fuentes, espaciados y radios.
- * * Este es un archivo "partial" (parcial), indicado por el guion bajo (_).
- * No debe ser enlazado directamente en el HTML. Es importado por `main.css`.
+ * * Este es un archivo parcial.
  */
 
 :root {
@@ -11,11 +10,11 @@
     /* --- 1. Tokens de Sistema (Fuente y Espaciado) --- */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --grid-gap: 1rem;
-    /* (16px) Espacio entre celdas del grid */
+    /* Espacio entre celdas del grid */
     --border-radius: 20px;
     /* Radio de todas las celdas */
     --padding-item: 1.5rem;
-    /* (24px) Padding interno de las celdas */
+    /*  Padding interno de las celdas */
 
     /* * --- 2. Tokens de Tema (Modo Claro - Por Defecto) ---
      * Definimos los colores semánticos para el tema claro.
