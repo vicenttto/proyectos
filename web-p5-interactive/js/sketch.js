@@ -7,7 +7,7 @@ function setup() {
     // 1. Creamos el Canvas
     let canvas = createCanvas(windowWidth, windowHeight);
 
-    // 2. ¡TRUCO! Metemos el canvas dentro del div que preparamos en HTML
+    // 2. Metemos el canvas dentro del div que preparamos en HTML
     // Esto es lo que "integra de forma natural" la web y el P5
     canvas.parent('canvas-container');
 
@@ -18,16 +18,17 @@ function setup() {
 }
 
 function draw() {
-    // Fondo casi negro (coincide con tu CSS --bg-dark)
-    // El segundo valor (255) es la opacidad si quisieras dejar estela
+    // Pintamos el fondo de casi negro (valor 5) en cada fotograma.
     background(5);
 
     // Recorremos todas las partículas
     for (let i = 0; i < particles.length; i++) {
         let p = particles[i];
-
+        // Calculamos su nueva posición basándonos en su velocidad
         p.update();
+        //  RENDERIZADO: Dibujamos el círculo en la nueva posición
         p.draw();
+        // Comprobamos si está cerca de otras partículas para dibujar líneas.
         p.joinParticles(particles.slice(i)); // Comprobar conexiones con las demás
         p.interactWithMouse(); // INTERACCIÓN CON EL RATÓN
     }
@@ -51,8 +52,8 @@ class Particle {
         // Tamaño aleatorio
         this.size = random(2, 4);
 
-        // Color aleatorio entre Cian y Magenta (tus colores CSS)
-        // random() > 0.5 es como lanzar una moneda
+        // Color aleatorio entre Cian y Magenta 
+        // random() > 0.5 
         this.color = random() > 0.5 ? color(0, 243, 255) : color(255, 0, 255);
     }
 
