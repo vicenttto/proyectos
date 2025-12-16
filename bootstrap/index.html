@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+    <!-- CABECERA Navbar de 3 zonas: Izquierda (Menú móvil), Centro (Logo centrado con mx-auto) y Derecha (Iconos y Login). -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
         <div class="container-fluid">
 
@@ -41,7 +41,7 @@
             </div>
         </div>
     </nav>
-
+    <!-- [JUMBOTRON] Uso card-img-overlay para poner texto sobre la imagen. Añado atributos AOS para animaciones al hacer scroll. -->
     <header class="card text-white border-0 rounded-0 mb-5">
         <img src="https://images.unsplash.com/photo-1664526936810-ec0856d31b92?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="card-img hero-img rounded-0" alt="Hero" loading="lazy">
@@ -54,7 +54,7 @@
     </header>
 
     <div class="container">
-
+        <!-- Diseño Damero: Uso col-md-6. En escritorio son 2 columnas, en móvil se apilan en 1 sola (Mobile First). -->
         <div class="row align-items-center mb-5" data-aos="fade-right">
             <div class="col-md-6 p-5">
                 <h3>Aprende Ciberseguridad</h3>
@@ -99,7 +99,7 @@
             <button class="btn btn-light mt-2">Más información</button>
         </div>
     </section>
-
+    <!-- [INTERACTIVIDAD] 4 columnas en PC, 1 en móvil. Implemento Collapse: La imagen actúa como botón para mostrar info oculta. -->
     <div class="container mb-5">
         <h3 class="text-center mb-4">Explora por Categoría</h3>
         <div class="row g-4">
@@ -114,8 +114,9 @@
             </div>
 
             <div class="col-12 col-md-3 text-center">
-                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Terminal+%7C+CLI" class="img-fluid rounded pointer mb-2"
-                    data-bs-toggle="collapse" data-bs-target="#info2" alt="OS Icon">
+                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Terminal+%7C+CLI"
+                    class="img-fluid rounded pointer mb-2" data-bs-toggle="collapse" data-bs-target="#info2"
+                    alt="OS Icon">
                 <div class="collapse" id="info2">
                     <div class="card card-body border-0 bg-light shadow-sm">
                         Sistemas Operativos
@@ -124,8 +125,9 @@
             </div>
 
             <div class="col-12 col-md-3 text-center">
-                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Estrategia+%7C+Business" class="img-fluid rounded pointer mb-2"
-                    data-bs-toggle="collapse" data-bs-target="#info3" alt="Business Icon">
+                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Estrategia+%7C+Business"
+                    class="img-fluid rounded pointer mb-2" data-bs-toggle="collapse" data-bs-target="#info3"
+                    alt="Business Icon">
                 <div class="collapse" id="info3">
                     <div class="card card-body border-0 bg-light shadow-sm">
                         Negocios IT
@@ -134,8 +136,9 @@
             </div>
 
             <div class="col-12 col-md-3 text-center">
-                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Router+%7C+Cableado" class="img-fluid rounded pointer mb-2"
-                    data-bs-toggle="collapse" data-bs-target="#info4" alt="Network Icon">
+                <img src="https://placehold.co/300x180/1d273e/00bceb?text=Router+%7C+Cableado"
+                    class="img-fluid rounded pointer mb-2" data-bs-toggle="collapse" data-bs-target="#info4"
+                    alt="Network Icon">
                 <div class="collapse" id="info4">
                     <div class="card card-body border-0 bg-light shadow-sm">
                         Simulación de Redes
@@ -144,7 +147,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Footer Híbrido: En escritorio (.d-md-flex) se ven iconos; en móvil (.d-md-none) cambia a un Accordion. -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
 
