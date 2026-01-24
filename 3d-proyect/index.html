@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="ui-container">
+        <h1 class="neon-title">3D CONTROL</h1>
+        <div id="ui-menu">
+            <button class="glass-btn action-btn" onclick="uiAction(this, 'capoeira')">
+                CAPOEIRA <span class="status-icon">▶</span>
+            </button>
+            <button class="glass-btn action-btn" onclick="uiAction(this, 'walk')">
+                WALK <span class="status-icon">▶</span>
+            </button>
+            <button class="glass-btn action-btn" onclick="uiAction(this, 'die')">
+                DYING <span class="status-icon">▶</span>
+            </button>
+        </div>
+    </div>
+
+    <canvas id="three-canvas"></canvas>
+
+    <script type="module" src="main.js"></script>
+
+    <script>
+        function uiAction(btn, action) {
+            document.querySelectorAll('.glass-btn').forEach(b => b.classList.remove('active'));
+            if (window.changeAnimation) window.changeAnimation(action);
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
