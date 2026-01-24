@@ -448,48 +448,37 @@ body.nav-open .wrapper {
 /* ============================================
   7. RESPONSIVIDAD 
 ============================================ */
-/* Cuando la pantalla es más pequeña de 1050px... */
+
+
+/* Cuando la pantalla sea menor de 1050px (Tablets y Móviles) */
 @media (max-width: 1050px) {
+-
+    /* 1. DESBLOQUEAR EL ANCHO DEL CONTENEDOR PRINCIPAL */
+    .wrapper {
+        min-width: 0;      
+        width: 100%;        
+        margin: 0;           
+        flex-direction: column; 
+    }
 
-  /* Apila el contenido y la barra lateral */
-  .wrapper {
-    flex-direction: column;
-  }
+    /* 2. AJUSTAR LA SECCIÓN PRINCIPAL (ARTÍCULOS) */
+    .main-content {
+        width: 100%;       
+        padding: 20px;   
+    }
 
-  .sidebar {
-    margin-left: 0;
-    margin-top: 1.5rem;
-  }
+    /* 3. AJUSTAR LA BARRA LATERAL */
+    .sidebar {
+        width: 100%;      
+        margin-top: 20px;  
+    }
 }
 
-@media (max-width: 1000px) {
-  
-}
 
-@media (max-width: 768px) {
-
-  /* Ajustes responsive generales   */
-  .site-header h1 {
-    font-size: var(--fs-h2);
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-content p {
-    margin-bottom: var(--spacing-base);
-  }
-
-  .main-content,
-  .sidebar {
-    padding: var(--spacing-base);
-  }
-
-  .blog-post {
-    padding: var(--spacing-base);
-  }
+@media (max-width: 600px) {
+    .articles-container {
+        flex-direction: column; 
+    }
 }
 
 /* ============================================
