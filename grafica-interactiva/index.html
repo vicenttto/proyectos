@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/icons/Weather/sun-cloudy-line.svg"
+        type="image/svg+xml">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
+        <i class="ri-moon-line"></i>
+    </button>
+
+    <div class="app-container">
+
+        <header>
+            <div class="header-content">
+                <h1>El Tiempo</h1>
+                <div class="location-badge">
+                    <i class="ri-map-pin-2-fill"></i>
+                    <span id="location-name">Localizando...</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="bento-grid">
+
+            <div class="card map-card">
+                <div id="map"></div>
+                <button id="recenter-btn" class="map-btn">
+                    <i class="ri-navigation-fill"></i> Mí ubicación
+                </button>
+            </div>
+
+            <div class="card main-weather-card">
+                <div id="weather-main">
+                    <span class="loading-text">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="card widget-card">
+                <div class="widget-header">
+                    <i class="ri-windy-line icon-widget"></i>
+                    <span class="label">Viento</span>
+                </div>
+                <div class="value" id="val-wind">--</div>
+                <div class="sub-label" id="val-wind-dir">--</div>
+            </div>
+
+            <div class="card widget-card">
+                <div class="widget-header">
+                    <i class="ri-drop-line icon-widget"></i>
+                    <span class="label">Humedad</span>
+                </div>
+                <div class="value" id="val-humidity">--</div>
+            </div>
+
+            <div class="card widget-card">
+                <div class="widget-header">
+                    <i class="ri-speed-up-line icon-widget"></i> <span class="label">Presión</span>
+                </div>
+                <div class="value" id="val-pressure">--</div>
+            </div>
+
+            <div class="card widget-card">
+                <div class="widget-header">
+                    <i class="ri-umbrella-line icon-widget"></i>
+                    <span class="label">Lluvia</span>
+                </div>
+                <div class="value" id="val-rain">--</div>
+                <div class="sub-label">Última hora</div>
+            </div>
+
+            <div class="card chart-card">
+                <div class="widget-header">
+                    <i class="ri-calendar-event-line icon-widget"></i>
+                    <span class="label">Pronóstico 5 Días</span>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="forecastChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
