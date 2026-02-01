@@ -81,6 +81,6 @@ Para garantizar el rendimiento y la estetica, se han implementado las siguientes
 ```text
 /
 ├── styles.css             # Estilos visuales, grid y temas (Dark/Light)
-├── main.js                # Logica de API, mapa y graficas
+├── script.js              # Logica de API, mapa y graficas
 ├── index.html             # Estructura principal y enlaces a librerias
 └── README.md              # Documentacion del proyecto
