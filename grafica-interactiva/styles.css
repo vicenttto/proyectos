@@ -309,3 +309,71 @@ header h1 {
         height: 250px;
     }
 }
+
+/* --- AJUSTE PARA PANTALLAS BAJITAS (LAPTOPS) --- */
+/* Esto se activa solo si la altura de la ventana es menor a 900px */
+@media (max-height: 900px) and (min-width: 800px) {
+
+    /* 1. Reducimos márgenes generales */
+    body {
+        padding: 10px 20px;
+        /* Menos espacio arriba/abajo */
+    }
+
+    header {
+        margin-bottom: 10px;
+        /* Cabecera más pegada */
+    }
+
+    header h1 {
+        font-size: 22px;
+        /* Título un poco más pequeño */
+    }
+
+    /* 2. Compactamos la rejilla (Lo más importante) */
+    .bento-grid {
+        /* Reducimos la altura de las filas drásticamente */
+        /* Original: 240px 140px 140px 280px */
+        /* Compacto: 180px 100px 100px 180px */
+        grid-template-rows: 180px 100px 100px 180px;
+        gap: 10px;
+        /* Huecos más finos entre tarjetas */
+    }
+
+    /* 3. Ajustamos el contenido de las tarjetas para que no se corte */
+    .card {
+        padding: 12px 15px;
+        /* Menos "aire" dentro de las cajas */
+    }
+
+    /* Ajuste de textos grandes */
+    .temp-big {
+        font-size: 2.5rem;
+    }
+
+    .weather-status {
+        font-size: 1rem;
+    }
+
+    /* Ajuste de widgets */
+    .value {
+        font-size: 1.4rem;
+        margin-top: 5px;
+    }
+
+    .label {
+        font-size: 0.75rem;
+    }
+
+    .icon-widget {
+        font-size: 1rem;
+    }
+
+    /* Ajuste del botón del mapa */
+    .map-btn {
+        bottom: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
