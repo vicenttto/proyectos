@@ -1,4 +1,4 @@
-# Duffman Digital Twin - Integracion Web + Three.js
+#  Digital Twin - Integracion Web + Three.js
 
 <p align="center">
   <a href="https://vicenttto.github.io/proyectos/3d-proyect/index.html">
