@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accesible - Ejemplo Refactorizado</title>
+    <style>
+        /* Reset y configuración base */
+        :root {
+            --primary-color: #003366;
+            /* Azul oscuro para alto contraste (AAA) */
+            --bg-header: #f4f4f4;
+            --text-main: #222222;
+            /* Gris casi negro para lectura */
+            --text-secondary: #454545;
+            /* Contraste suficiente 7:1 */
+            --focus-ring: 3px solid #005a9c;
+            --focus-offset: 3px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Enlaces accesibles y gestión del foco */
+        a,
+        button,
+        input {
+            outline: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: var(--focus-ring);
+            outline-offset: var(--focus-offset);
+        }
+
+        /* 1. Semántica: Header */
+        header {
+            background-color: var(--bg-header);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            font-size: 2rem;
+            /* ~32px */
+            margin: 0;
+            color: #111;
+        }
+
+        /* Navegación accesible */
+        nav {
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #0044cc;
+            /* Azul con buen contraste */
+            text-decoration: underline;
+            font-weight: 600;
+            padding: 10px;
+            /* Zona de clic amplia */
+            display: inline-block;
+        }
+
+        nav a:hover {
+            text-decoration: none;
+            background-color: #eef;
+            border-radius: 4px;
+        }
+
+        /* Contenedor Principal */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Jerarquía de encabezados */
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* Texto corregido (Antes invisible) */
+        .texto-legible {
+            color: var(--text-secondary);
+            /* Cumple AAA */
+            font-size: 1.1rem;
+        }
+
+        /* Imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+
+        /* 2. Formularios sin tablas */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            border: 2px solid #767676;
+            /* Borde con contraste 3:1 mínimo */
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Botón accesible nativo */
+        .btn-primario {
+            background-color: #005f40;
+            /* Verde oscuro (AAA contra blanco) */
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primario:hover {
+            background-color: #00452e;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header role="banner">
+        <h1>Bienvenido a mi Sitio Web</h1>
+    </header>
+
+    <nav aria-label="Menú principal">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main role="main">
+
+        <article>
+            <h2>Últimas novedades</h2>
+
+            <p class="texto-legible">
+                Este texto ahora es fácil de leer porque cumple con los ratios de contraste WCAG AAA.
+                Las personas con baja visión pueden acceder a este contenido sin dificultad.
+            </p>
+
+            <img src="https://via.placeholder.com/300x150"
+                alt="Gráfico ilustrativo de las últimas tendencias del mercado" />
+        </article>
+
+        <section aria-labelledby="form-heading">
+            <h2 id="form-heading">Suscríbete al boletín</h2>
+
+            <form action="/suscripcion" method="POST" novalidate>
+
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail">Correo electrónico:</label>
+                    <input type="email" id="mail" name="mail" autocomplete="email" required>
+                </div>
+
+                <button type="submit" class="btn-primario">
+                    SUSCRIBIRSE
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>
+                <a href="#mas-info" aria-label="Más información sobre la suscripción y condiciones">
+                    Ver más información sobre el boletín
+                </a>.
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

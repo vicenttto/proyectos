@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Web de Prueba - Accesibilidad</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .header-falso {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+        }
+
+        .boton-inaccessible {
+            background-color: #fab1a0;
+            /* Contraste insuficiente */
+            color: white;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .texto-invisible {
+            color: #ccc;
+            /* Gris muy claro sobre blanco: Error grave de contraste */
+        }
+
+        .menu-span span {
+            margin: 0 10px;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-falso">Bienvenido a mi Sitio Web</div>
+
+    <br>
+
+    <div class="menu-span" style="text-align:center;">
+        <span onclick="alert('Ir a Inicio')">Inicio</span> |
+        <span onclick="alert('Ir a Servicios')">Servicios</span> |
+        <span onclick="alert('Ir a Contacto')">Contacto</span>
+    </div>
+
+    <br><br>
+
+    <div style="padding: 20px;">
+        <b>Últimas novedades</b>
+
+        <p class="texto-invisible">
+            Este texto es muy difícil de leer porque tiene un contraste bajísimo.
+            Las personas con baja visión no podrán leer esto.
+        </p>
+
+        <img src="https://via.placeholder.com/300x150" />
+
+        <br><br>
+
+        <b>Suscríbete al boletín</b>
+        <form>
+            <table border="0">
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="mail"></td>
+                </tr>
+            </table>
+
+            <div class="boton-inaccessible" onclick="alert('Suscrito!')">
+                ENVIAR
+            </div>
+        </form>
+
+        <br><br>
+        <a href="#">Pincha aquí</a> para más información.
+    </div>
+
+</body>
+
+</html>
