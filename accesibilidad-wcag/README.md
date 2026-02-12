@@ -44,7 +44,14 @@ The development was based on an iterative methodology. First, a diagnosis of acc
 
 Se diseñó un prompt basado en el framework **Rol-Tarea-Restricción** para asegurar una respuesta técnica precisa en el primer intento.
 
-> **Prompt:** _"Actúa como un Experto Senior en Accesibilidad Web. Refactoriza el código HTML proporcionado para cumplir estrictamente con WCAG 2.2 (Nivel AA/AAA). Requisitos: 1. Semántica HTML5 completa (<header>, <nav>, <main>, <section>). 2. Contraste AAA (>7:1). 3. Etiquetas <label> vinculadas por ID. 4. Navegación por teclado con foco visible. 5. Atributos ARIA y jerarquía de encabezados según Olga Carreras. Entrega solo el código."_
+> **Prompt:** "Actúa como un Experto Senior en Accesibilidad Web y Desarrollador Front-end. Refactoriza el código HTML proporcionado para que cumpla estrictamente con la normativa **WCAG 2.2 (Nivel AA/AAA)**. Requisitos estrictos:
+>
+> 1. Implementar semántica HTML5 pura (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`).
+> 2. Corregir contrastes de color para cumplir nivel AAA (ratio > 7:1).
+> 3. Vincular explícitamente etiquetas `<label>` con sus `<input>` mediante `for` e `id`.
+> 4. Asegurar navegación 100% por teclado con un anillo de foco visible (`:focus-visible`).
+> 5. Añadir atributos WAI-ARIA necesarios y jerarquía de encabezados lógica según las pautas de **Olga Carreras**.
+> 6. Definir el idioma del documento (`lang="es"`).
 
 ---
 
