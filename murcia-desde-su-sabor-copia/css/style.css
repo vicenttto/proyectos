@@ -117,16 +117,22 @@
     transform: scale(0.9);
     /* Efecto de click físico */
 }
-/* Sombra para el menú cuando está abierto */
+
+/* Asegura que el botón de menú no sea tapado por el propio menú lateral */
+#menu-toggle {
+    z-index: 70;
+}
+
+/* Sombras y bordes para que se vea la separación */
 #mobile-menu {
-    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.2);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .dark #mobile-menu {
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.6);
 }
 
-/* Evita movimientos raros de la página al esconder el menú */
+/* Evita el scroll horizontal */
 body {
     overflow-x: hidden;
 }

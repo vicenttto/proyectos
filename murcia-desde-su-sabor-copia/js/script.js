@@ -35,31 +35,30 @@ if (savedTheme) {
 }
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
-const menuOverlay = document.getElementById('menu-overlay');
-const menuIcon = document.getElementById('menu-icon');
+const iconMenu = document.getElementById('icon-menu');
+const iconClose = document.getElementById('icon-close');
 
-function toggleMenu() {
-    // Comprobamos si el menú está abierto mirando la clase de transformación
-    const isOpen = mobileMenu.classList.contains('translate-x-0');
+menuToggle.addEventListener('click', () => {
+    // 1. Deslizar el menú
+    mobileMenu.classList.toggle('translate-x-full');
 
-    if (!isOpen) {
-        // ABRIR
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-        menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
-        menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
-        menuIcon.setAttribute('data-lucide', 'x'); // Cambia a Cruz
+    // 2. Intercambiar visibilidad de los iconos
+    const isOpen = !mobileMenu.classList.contains('translate-x-full');
+
+    if (isOpen) {
+        iconMenu.classList.replace('block', 'hidden');
+        iconClose.classList.replace('hidden', 'block');
     } else {
-        // CERRAR
-        mobileMenu.classList.remove('translate-x-0');
-        mobileMenu.classList.add('translate-x-full');
-        menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-        menuOverlay.classList.add('opacity-0', 'pointer-events-none');
-        menuIcon.setAttribute('data-lucide', 'menu'); // Cambia a Hamburguesa
+        iconMenu.classList.replace('hidden', 'block');
+        iconClose.classList.replace('block', 'hidden');
     }
-    // ESTA LÍNEA ES VITAL: Vuelve a dibujar el icono para que cambie visualmente
-    lucide.createIcons();
-}
+});
 
-menuToggle.addEventListener('click', toggleMenu);
-menuOverlay.addEventListener('click', toggleMenu); // Cerrar al tocar el oscurecido
+// Cerrar menú al pulsar en un enlace (Inicio)
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+        iconMenu.classList.replace('hidden', 'block');
+        iconClose.classList.replace('block', 'hidden');
+    });
+});

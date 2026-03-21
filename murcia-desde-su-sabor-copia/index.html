@@ -36,15 +36,15 @@
 
 <body
     class="font-montserrat antialiased transition-colors duration-500 bg-white dark:bg-m_navy text-m_navy dark:text-white">
+
     <header
         class="fixed top-0 w-full z-50 px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
         <div class="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+
             <div class="logo-container h-16 transition-all duration-300">
                 <a href="index.html" class="block h-full group">
-                    <img src="assets/img/logo-navy.png" alt="Logo"
-                        class="h-full object-contain dark:hidden transition-transform duration-300 group-hover:scale-105">
-                    <img src="assets/img/logo-white.png" alt="Logo"
-                        class="h-full object-contain hidden dark:block transition-transform duration-300 group-hover:scale-105">
+                    <img src="assets/img/logo-navy.png" alt="Logo" class="h-full object-contain dark:hidden">
+                    <img src="assets/img/logo-white.png" alt="Logo" class="h-full object-contain hidden dark:block">
                 </a>
             </div>
 
@@ -53,28 +53,25 @@
                     <li><a href="#" class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
                 </ul>
 
-                <button id="theme-toggle"
-                    class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
                     <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-m_yellow"></i>
                     <i data-lucide="moon" class="block dark:hidden w-5 h-5 text-m_navy"></i>
                 </button>
 
-                <button id="menu-toggle"
-                    class="relative z-50 block md:hidden p-2 text-m_navy dark:text-white focus:outline-none">
-                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6 transition-transform duration-300"></i>
+                <button id="menu-toggle" class="md:hidden p-2 focus:outline-none relative z-[60]">
+                    <i data-lucide="menu" id="icon-menu" class="w-6 h-6 block"></i>
+                    <i data-lucide="x" id="icon-close" class="w-6 h-6 hidden"></i>
                 </button>
             </nav>
         </div>
 
-        <div id="menu-overlay"
-            class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
-
         <div id="mobile-menu"
-            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-32 shadow-2xl">
-            <a href="#"
-                class="mobile-link text-2xl font-black uppercase mb-8 hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a>
+            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-[55] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-32 shadow-2xl border-l border-black/5 dark:border-white/10">
 
-            <div class="mt-auto flex gap-6 pb-10 border-t border-black/5 dark:border-white/5 pt-8">
+            <a href="#"
+                class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow">Inicio</a>
+
+            <div class="mt-auto flex gap-6 pb-10 border-t border-black/5 dark:border-white/10 pt-8">
                 <a href="https://www.instagram.com/..." class="social-icon"><i data-lucide="instagram"></i></a>
                 <a href="https://www.youtube.com/..." class="social-icon"><i data-lucide="youtube"></i></a>
             </div>
