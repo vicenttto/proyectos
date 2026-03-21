@@ -1,0 +1,132 @@
+/* EFECTO GLASSMORFISMO (CRISTAL) - OPTIMIZADO */
+.glass-card {
+    /* 1. MÁXIMA ESTABILIDAD VISUAL */
+    aspect-ratio: 1 / 1;
+    /* Forzamos tarjetas cuadradas perfectas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Ocupa todo el alto de la celda */
+    width: 100%;
+    /* Ocupa todo el ancho de la celda */
+
+    /* 2. CONSTANTES DE TAMAÑO (Evitan el cambio de tamaño) */
+    padding: 3rem;
+    /* Relleno fijo e idéntico en ambos modos */
+    border-width: 1px;
+    /* Grosor de borde constante */
+    border-style: solid;
+    /* Estilo constante */
+    border-radius: 24px;
+    /* Esquinas constantes */
+
+    /* 3. COLORES POR DEFECTO (Modo Oscuro/Básico) */
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Cristal marino sutil */
+    border-color: rgba(255, 255, 255, 0.1);
+    /* Borde marino sutil */
+
+    /* 4. EFECTOS Y TRANSICIONES */
+    backdrop-filter: blur(12px);
+    /* El desenfoque del cristal */
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* AJUSTES MODO CLARO - SOLO COLORES, SIN CAMBIAR TAMAÑO */
+.light .glass-card {
+    background-color: rgba(0, 0, 0, 0.02);
+    /* Cristal blanco sutil */
+    border-color: rgba(0, 0, 0, 0.05);
+    /* Borde blanco sutil */
+}
+
+/* EFECTO HOVER (ELEVACIÓN PROFESIONAL) */
+.glass-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    /* Elevación y ligero aumento */
+    z-index: 10;
+    /* Se superpone a las vecinas */
+}
+
+/* COLORES HOVER (MODO OSCURO) */
+.dark .glass-card:hover {
+    border-color: #FFD700;
+    /* Borde Amarillo Limón */
+    background-color: rgba(255, 255, 255, 0.06);
+    /* Fondo ligeramente más claro */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    /* Sombra profunda y oscura */
+}
+
+/* COLORES HOVER (MODO CLARO) */
+.light .glass-card:hover {
+    border-color: #E31E24;
+    /* Borde Rojo Pimiento */
+    background-color: rgba(255, 255, 255, 1);
+    /* Fondo blanco puro */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    /* Sombra suave y clara */
+}
+
+/* LOGOS DENTRO DEL BENTO - OPTIMIZADOS PARA UNIFORMIDAD */
+.logo-bento {
+    max-width: 90%;
+    /* Ocupan casi todo el ancho disponible */
+    max-height: 80%;
+    /* Ocupan casi todo el alto disponible */
+    object-fit: contain;
+    /* Se ajustan sin deformarse */
+    filter: grayscale(100%);
+    /* En B&N para elegancia institucional */
+    opacity: 0.6;
+    transition: all 0.5s ease;
+}
+
+/* EFECTO LOGO AL HOVER (COBRA COLOR Y TAMAÑO) */
+.glass-card:hover .logo-bento {
+    filter: grayscale(0%);
+    /* Recupera su color original */
+    opacity: 1;
+    transform: scale(1.08);
+    /* El logo crece ligeramente dentro de la tarjeta */
+}
+
+/* ICONOS REDES SOCIALES (FOOTER) - SIN CAMBIOS */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.social-icon:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    color: #E31E24;
+    /* Rojo pimiento */
+}
+
+.social-icon:active {
+    transform: scale(0.9);
+    /* Efecto de click físico */
+}
+/* Sombra para el menú cuando está abierto */
+#mobile-menu {
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.2);
+}
+
+.dark #mobile-menu {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Evita movimientos raros de la página al esconder el menú */
+body {
+    overflow-x: hidden;
+}
