@@ -20,10 +20,10 @@
             theme: {
                 extend: {
                     colors: {
-                        m_navy: '#1D2338',   // El azul de tu logo
-                        m_red: '#E31E24',    // El rojo pimiento
-                        m_yellow: '#FFD700', // El amarillo limón
-                        m_green: '#2D5A27'   // El verde huerta
+                        m_navy: '#1D2338',
+                        m_red: '#E31E24',
+                        m_yellow: '#FFD700',
+                        m_green: '#2D5A27'
                     },
                     fontFamily: {
                         montserrat: ['Montserrat', 'sans-serif'],
@@ -37,9 +37,14 @@
 <body
     class="font-montserrat antialiased transition-colors duration-500 bg-white dark:bg-m_navy text-m_navy dark:text-white">
 
+    <!-- OVERLAY: aparece detrás del menú para cerrar al pulsar fuera -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/40 z-[54] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
     <header
-        class="fixed top-0 w-full z-50 px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
-        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-50">
+        class="fixed top-0 w-full z-[60] px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
+        
+        <!-- z-[70] garantiza que el botón hamburguesa siempre esté por encima del menú lateral (z-[55]) -->
+        <div class="max-w-7xl mx-auto flex justify-between items-center relative z-[70]">
 
             <div class="logo-container h-16 transition-all duration-300">
                 <a href="index.html" class="block h-full group">
@@ -58,22 +63,36 @@
                     <i data-lucide="moon" class="block dark:hidden w-5 h-5 text-m_navy"></i>
                 </button>
 
-                <button id="menu-toggle" class="md:hidden p-2 focus:outline-none relative z-[60]">
-                    <i data-lucide="menu" id="icon-menu" class="w-6 h-6 block"></i>
-                    <i data-lucide="x" id="icon-close" class="w-6 h-6 hidden"></i>
+                <!-- Botón hamburguesa: usa un div interno para la animación de rotación -->
+                <button id="menu-toggle" class="md:hidden p-2 focus:outline-none" aria-label="Abrir menú">
+                    <div id="menu-icon-wrapper" class="menu-icon-wrapper">
+                        <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="icon-close" class="w-6 h-6 menu-icon-hidden"></i>
+                    </div>
                 </button>
             </nav>
         </div>
 
+        <!-- Menú lateral móvil: z-[55], por debajo del header (z-[60]) y del nav wrapper (z-[70]) -->
         <div id="mobile-menu"
-            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-[55] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-32 shadow-2xl border-l border-black/5 dark:border-white/10">
+            class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-[55] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-28 shadow-2xl border-l border-black/5 dark:border-white/10">
 
+            <!-- Enlace de inicio -->
             <a href="#"
-                class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow">Inicio</a>
+                class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+                Inicio
+            </a>
 
+            <!-- Redes sociales ancladas al fondo -->
             <div class="mt-auto flex gap-6 pb-10 border-t border-black/5 dark:border-white/10 pt-8">
-                <a href="https://www.instagram.com/..." class="social-icon"><i data-lucide="instagram"></i></a>
-                <a href="https://www.youtube.com/..." class="social-icon"><i data-lucide="youtube"></i></a>
+                <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                   class="social-icon" aria-label="Instagram">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@MurciaDesdeSuSabor" 
+                   class="social-icon" aria-label="YouTube">
+                    <i data-lucide="youtube"></i>
+                </a>
             </div>
         </div>
     </header>
@@ -84,7 +103,7 @@
                 Región de Murcia · 2026
             </span>
             <h1 class="text-6xl md:text-9xl font-extrabold leading-none tracking-tighter mb-8">
-                Se está <br> cocinando algo </span>grande
+                Se está <br> cocinando algo <span>grande</span>
             </h1>
             <p class="text-lg md:text-xl font-medium opacity-60 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Un proyecto que pone en valor nuestra gastronomía, nuestra identidad y todo lo que hace única a nuestra
@@ -117,7 +136,6 @@
 
             <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
                 <img src="assets/logos/turismo-dark.png" alt="Murcia Turismo" class="logo-bento">
-
             </div>
 
             <div class="glass-card" data-aos="fade-up" data-aos-delay="400">
@@ -144,10 +162,10 @@
 
             <div class="flex gap-6">
                 <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                    class="social-icon">
+                    class="social-icon" aria-label="Instagram">
                     <i data-lucide="instagram"></i>
                 </a>
-                <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon">
+                <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon" aria-label="YouTube">
                     <i data-lucide="youtube"></i>
                 </a>
             </div>
@@ -157,7 +175,6 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script src="js/script.js"></script>
 
 </body>

@@ -1,64 +1,90 @@
 // 1. INICIALIZAR ICONOS LUCIDE
-// Esto busca las etiquetas <i data-lucide="..."> y dibuja el vector
 lucide.createIcons();
 
 // 2. INICIALIZAR ANIMACIONES AOS
 AOS.init({
-    duration: 1000, // Duración de la animación (ms)
-    once: true,     // Que solo se anime la primera vez que bajamos
-    offset: 100     // Distancia para que se active al bajar
+    duration: 1000,
+    once: true,
+    offset: 100
 });
 
 // 3. LÓGICA DEL MODO OSCURO / CLARO
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-themeToggle.addEventListener('click', () => {
-    // Si el HTML tiene la clase 'dark', la quita. Si no, la pone.
-    if (htmlElement.classList.contains('dark')) {
-        htmlElement.classList.remove('dark');
-        htmlElement.classList.add('light');
-        localStorage.setItem('theme', 'light'); // Guarda la elección del usuario
-    } else {
-        htmlElement.classList.remove('light');
-        htmlElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-    }
-});
-
-// 4. MANTENER EL TEMA AL RECARGAR
-// Esto evita que la web "parpadee" al recargar si el usuario eligió un modo
+// Aplicar tema guardado antes de cualquier render
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     htmlElement.classList.remove('dark', 'light');
     htmlElement.classList.add(savedTheme);
 }
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const iconMenu = document.getElementById('icon-menu');
-const iconClose = document.getElementById('icon-close');
 
-menuToggle.addEventListener('click', () => {
-    // 1. Deslizar el menú
-    mobileMenu.classList.toggle('translate-x-full');
-
-    // 2. Intercambiar visibilidad de los iconos
-    const isOpen = !mobileMenu.classList.contains('translate-x-full');
-
-    if (isOpen) {
-        iconMenu.classList.replace('block', 'hidden');
-        iconClose.classList.replace('hidden', 'block');
+themeToggle.addEventListener('click', () => {
+    if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.replace('dark', 'light');
+        localStorage.setItem('theme', 'light');
     } else {
-        iconMenu.classList.replace('hidden', 'block');
-        iconClose.classList.replace('block', 'hidden');
+        htmlElement.classList.replace('light', 'dark');
+        localStorage.setItem('theme', 'dark');
     }
 });
 
-// Cerrar menú al pulsar en un enlace (Inicio)
+
+// 4. MENÚ HAMBURGUESA MÓVIL
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuOverlay = document.getElementById('menu-overlay');
+const iconMenu = document.getElementById('icon-menu');
+const iconClose = document.getElementById('icon-close');
+
+let menuOpen = false;
+
+function openMenu() {
+    menuOpen = true;
+    // Deslizar menú
+    mobileMenu.classList.remove('translate-x-full');
+    // Mostrar overlay
+    menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    menuOverlay.classList.add('opacity-100');
+    // Animar icono: ocultar hamburguesa, mostrar X
+    iconMenu.classList.add('menu-icon-hidden');
+    iconMenu.classList.remove('menu-icon-visible');
+    iconClose.classList.remove('menu-icon-hidden');
+    iconClose.classList.add('menu-icon-visible');
+    // Evitar scroll del body
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+    menuOpen = false;
+    // Ocultar menú
+    mobileMenu.classList.add('translate-x-full');
+    // Ocultar overlay
+    menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+    menuOverlay.classList.remove('opacity-100');
+    // Animar icono: mostrar hamburguesa, ocultar X
+    iconClose.classList.add('menu-icon-hidden');
+    iconClose.classList.remove('menu-icon-visible');
+    iconMenu.classList.remove('menu-icon-hidden');
+    iconMenu.classList.add('menu-icon-visible');
+    // Restaurar scroll
+    document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuOpen ? closeMenu() : openMenu();
+});
+
+// Cerrar al pulsar el overlay (fuera del menú)
+menuOverlay.addEventListener('click', closeMenu);
+
+// Cerrar al pulsar en un enlace del menú
 document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('translate-x-full');
-        iconMenu.classList.replace('hidden', 'block');
-        iconClose.classList.replace('block', 'hidden');
-    });
+    link.addEventListener('click', closeMenu);
+});
+
+// Cerrar con tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuOpen) closeMenu();
 });
