@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hablando de Murcia - Murcia, desde su Sabor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- TEMA: se ejecuta ANTES de pintar para evitar parpadeo -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.classList.remove('dark', 'light');
+                document.documentElement.classList.add(saved);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.remove('dark', 'light');
+                document.documentElement.classList.add(prefersDark ? 'dark' : 'light');
+            }
+        })();
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        m_navy: '#1D2338',
+                        m_red: '#E31E24',
+                        m_yellow: '#FFD700',
+                        m_green: '#2D5A27'
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="font-montserrat antialiased transition-colors duration-500 bg-white dark:bg-m_navy text-m_navy dark:text-white">
+
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-black/40 z-[54] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-[55] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-28 shadow-2xl border-l border-black/5 dark:border-white/10">
+
+        <a href="index.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Inicio
+        </a>
+
+        <a href="hablando-de-murcia.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Hablando de Murcia
+        </a>
+
+        <div class="mt-auto flex gap-6 pb-10 border-t border-black/5 dark:border-white/10 pt-8">
+            <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+
+    <header
+        class="fixed top-0 w-full z-[60] px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
+
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+            <div class="logo-container h-16 transition-all duration-300">
+                <a href="index.html" class="block h-full group">
+                    <img src="assets/img/logo-navy.png" alt="Logo" class="h-full object-contain dark:hidden">
+                    <img src="assets/img/logo-white.png" alt="Logo" class="h-full object-contain hidden dark:block">
+                </a>
+            </div>
+
+            <nav class="flex items-center gap-4">
+                <ul class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest">
+                    <li><a href="index.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
+                    <li><a href="hablando-de-murcia.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
+                    </li>
+                </ul>
+
+                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                    <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-m_yellow"></i>
+                    <i data-lucide="moon" class="block dark:hidden w-5 h-5 text-m_navy"></i>
+                </button>
+
+                <button id="menu-toggle" class="md:hidden p-2 focus:outline-none" aria-label="Abrir menú">
+                    <div id="menu-icon-wrapper" class="menu-icon-wrapper">
+                        <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="icon-close" class="w-6 h-6 menu-icon-hidden"></i>
+                    </div>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO CON VIDEO INTEGRADO -->
+    <section id="hero-video" class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
+
+        <div class="w-full max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
+
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                    Hablando de Murcia
+                </span>
+
+                <!-- TODO: Cambiar título del episodio -->
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6">
+                    Episodio 1: Título del episodio aquí
+                </h1>
+
+                <!-- TODO: Actualizar fecha y duración -->
+                <div class="flex justify-center gap-6 text-sm opacity-60 mb-2">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>25 marzo 2026</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        <span>12:35</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container del video con glassmorphism -->
+            <div class="video-embed-wrapper relative" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+
+                <!-- Frame glassmorphism -->
+                <div
+                    class="absolute inset-0 rounded-3xl border border-black/5 dark:border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm pointer-events-none z-10">
+                </div>
+
+                <!-- TODO: Cambiar qQCUbVj_kl8 por tu VIDEO_ID real -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-black/60">
+                    <div class="aspect-video">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="100%" height="100%"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Accent line -->
+                <div
+                    class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-m_red to-m_red/50 dark:from-m_yellow dark:to-m_yellow/50 rounded-b-3xl">
+                </div>
+            </div>
+
+            <!-- Descripción del episodio -->
+            <div class="mt-12 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <!-- TODO: Cambiar descripción del episodio -->
+                <p class="text-lg md:text-xl leading-relaxed opacity-70">
+                    En este primer episodio de Hablando de Murcia, descubrimos las historias que hacen única a nuestra
+                    tierra a través de una conversación íntima y reveladora.
+                </p>
+            </div>
+
+            <!-- Botón volver -->
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 px-8 py-3 bg-white/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-m_navy dark:text-white font-bold rounded-full hover:scale-105 hover:bg-m_red hover:text-white dark:hover:bg-m_yellow dark:hover:text-m_navy transition-all backdrop-blur-sm uppercase text-xs tracking-widest">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Volver al inicio
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+
+            <!-- Logos institucionales en fila -->
+            <div class="flex flex-wrap justify-center md:justify-start items-center gap-5">
+                <img src="assets/logos/carm.png" alt="CARM" class="logo-footer logo-footer--lg">
+                <img src="assets/logos/itrem.png" alt="ITREM" class="logo-footer">
+                <img src="assets/logos/ue.png" alt="Unión Europea" class="logo-footer">
+                <img src="assets/logos/prtr.png" alt="PRTR" class="logo-footer logo-footer--lg">
+            </div>
+
+            <!-- Copyright y redes -->
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+                    Copyright © 2026 Murcia Desde Su Sabor
+                </p>
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
