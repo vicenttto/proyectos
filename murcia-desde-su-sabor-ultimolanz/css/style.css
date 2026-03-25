@@ -360,6 +360,17 @@ html:not(.dark) .glass-card-video:hover {
         display: flex;
         flex-direction: column-reverse;
     }
+    
+    /* Asegurar que las tarjetas se vean bien en móvil */
+    .glass-card-video {
+        min-height: 320px;
+        width: 100%;
+    }
+    
+    /* Card de texto necesita menos altura */
+    .glass-card-video:has(.video-thumbnail-container) {
+        min-height: auto;
+    }
 }
 
 /* =====================================================
