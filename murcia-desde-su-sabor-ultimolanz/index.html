@@ -98,7 +98,9 @@
             <nav class="flex items-center gap-4">
                 <ul class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest">
                     <li><a href="#" class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
-                    <li><a href="hablando-de-murcia.html" class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a></li>
+                    <li><a href="hablando-de-murcia.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
+                    </li>
                 </ul>
 
                 <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
@@ -173,74 +175,76 @@
         <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-6">
 
             <!-- CARD IZQUIERDA: Texto + CTA -->
-            <div class="glass-card-video flex flex-col justify-center p-10 md:p-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card-video flex flex-col justify-center p-10 md:p-12" data-aos="fade-up"
+                data-aos-delay="100">
                 <div class="flex items-center gap-3 mb-6">
                     <i data-lucide="clapperboard" class="w-8 h-8 text-m_red dark:text-m_yellow"></i>
                     <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
-                       Descubre
+                        Descubre
                     </span>
                 </div>
-                
+
                 <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-6">
                     Hablando de Murcia
                 </h3>
-                
+
                 <p class="text-base opacity-60 leading-relaxed mb-8">
                     Descubre nuestra tierra a través de conversaciones únicas con quienes hacen grande a Murcia.
                 </p>
-                
-                <a href="hablando-de-murcia.html" 
-                   class="inline-block px-8 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest self-start">
+
+                <a href="hablando-de-murcia.html"
+                    class="inline-block px-8 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest self-start">
                     Ver todos los videos →
                 </a>
             </div>
 
             <!-- CARD DERECHA: Video Preview -->
-            <a href="hablando-de-murcia.html" class="glass-card-video p-6 block group" data-aos="fade-up" data-aos-delay="200">
-                
+            <a href="hablando-de-murcia.html" class="glass-card-video p-6 block group" data-aos="fade-up"
+                data-aos-delay="200">
+
                 <!-- Container del thumbnail -->
                 <div class="video-thumbnail-container relative overflow-hidden rounded-2xl mb-4">
                     <!-- TODO: Cambiar VIDEO_ID por el ID real de YouTube -->
-                    <img src="https://img.youtube.com/vi/qQCUbVj_kl8/maxresdefault.jpg" 
-                         alt="Último episodio" 
-                         class="video-thumbnail w-full h-full object-cover aspect-video">
-                    
+                    <img src="https://img.youtube.com/vi/0xAMzauXBmM/maxresdefault.jpg" alt="Último episodio"
+                        class="video-thumbnail w-full h-full object-cover aspect-video">
+
                     <!-- Overlay oscuro al hover -->
-                    <div class="video-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div
+                        class="video-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <!-- Play icon -->
-                        <i data-lucide="play-circle" class="video-play-icon w-20 h-20 text-white drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                        <i data-lucide="play-circle"
+                            class="video-play-icon w-20 h-20 text-white drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    
+
                     <!-- Badge NUEVO (quitar cuando el video tenga más de 7 días) -->
-                    <div class="absolute top-4 right-4 bg-m_red dark:bg-m_yellow text-white dark:text-m_navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+                    <div
+                        class="absolute top-4 right-4 bg-m_red dark:bg-m_yellow text-white dark:text-m_navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
                         Nuevo
                     </div>
                 </div>
-                
-                <!-- Metadata del video -->
+
                 <div class="space-y-2">
                     <span class="text-xs font-bold uppercase tracking-[0.2em] opacity-40">
                         Último episodio
                     </span>
-                    
-                    <!-- TODO: Cambiar por el título real del video -->
-                    <h4 class="text-lg font-bold leading-tight line-clamp-2 group-hover:text-m_red dark:group-hover:text-m_yellow transition-colors">
-                        Título del primer episodio aquí
+
+                    <h4
+                        class="text-lg font-bold leading-tight line-clamp-2 group-hover:text-m_red dark:group-hover:text-m_yellow transition-colors">
+                        Hablando de Murcia | Capítulo 1 | Kuve y Sean Frutos
                     </h4>
-                    
-                    <!-- TODO: Actualizar fecha y duración cuando publiques el video -->
+
                     <div class="flex items-center gap-4 text-sm opacity-50">
                         <div class="flex items-center gap-1">
                             <i data-lucide="calendar" class="w-4 h-4"></i>
-                            <span>Hace 1 día</span>
+                            <span>Hoy</span>
                         </div>
                         <div class="flex items-center gap-1">
                             <i data-lucide="clock" class="w-4 h-4"></i>
-                            <span>12:35</span>
+                            <span>27:40</span>
                         </div>
                     </div>
                 </div>
-                
+
             </a>
 
         </div>
