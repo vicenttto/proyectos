@@ -94,8 +94,11 @@
 
             <nav class="flex items-center gap-4">
                 <ul class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest">
-                    <li><a href="index.html" class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
-                    <li><a href="hablando-de-murcia.html" class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a></li>
+                    <li><a href="index.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
+                    <li><a href="hablando-de-murcia.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
+                    </li>
                 </ul>
 
                 <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
@@ -115,20 +118,21 @@
 
     <!-- HERO CON VIDEO INTEGRADO -->
     <section id="hero-video" class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
-        
+
         <div class="w-full max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
-            
+
             <!-- Encabezado -->
             <div class="text-center mb-12">
-                <span class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                <span
+                    class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
                     Hablando de Murcia
                 </span>
-                
+
                 <!-- TODO: Cambiar título del episodio -->
                 <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6">
                     Episodio 1: Título del episodio aquí
                 </h1>
-                
+
                 <!-- TODO: Actualizar fecha y duración -->
                 <div class="flex justify-center gap-6 text-sm opacity-60 mb-2">
                     <div class="flex items-center gap-2">
@@ -141,48 +145,48 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Container del video con glassmorphism ALREDEDOR (no encima) -->
-            <div class="video-embed-container relative p-2 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent border border-black/5 dark:border-white/10 backdrop-blur-sm shadow-2xl shadow-black/20 dark:shadow-black/60" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-                
+            <div class="video-embed-container relative p-2 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent border border-black/5 dark:border-white/10 backdrop-blur-sm shadow-2xl shadow-black/20 dark:shadow-black/60"
+                data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+
                 <!-- TODO: Cambiar uknBdO2Q_wM por tu VIDEO_ID real -->
-                <div class="relative rounded-2xl overflow-hidden" style="padding-bottom: 56.25%; height: 0;">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        src="https://www.youtube.com/embed/uknBdO2Q_wM?si=Nrt21Pfrp9q0c8SP" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen
-                        style="position: absolute; top: 0; left: 0;">
-                    </iframe>
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-black/60">
+                    <div class="aspect-video">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="100%" height="100%"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="w-full h-full">
+                        </iframe>
+                    </div>
                 </div>
-                
+
                 <!-- Accent line -->
-                <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-m_red to-m_red/50 dark:from-m_yellow dark:to-m_yellow/50 rounded-b-3xl"></div>
+                <div
+                    class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-m_red to-m_red/50 dark:from-m_yellow dark:to-m_yellow/50 rounded-b-3xl">
+                </div>
             </div>
-            
+
             <!-- Descripción del episodio -->
             <div class="mt-12 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
                 <!-- TODO: Cambiar descripción del episodio -->
                 <p class="text-lg md:text-xl leading-relaxed opacity-70">
-                    En este primer episodio de Hablando de Murcia, descubrimos las historias que hacen única a nuestra tierra a través de una conversación íntima y reveladora.
+                    En este primer episodio de Hablando de Murcia, descubrimos las historias que hacen única a nuestra
+                    tierra a través de una conversación íntima y reveladora.
                 </p>
             </div>
-            
+
             <!-- Botón volver (mismo estilo que CTA del index) -->
             <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="600">
-                <a href="index.html" 
-                   class="inline-flex items-center gap-2 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest">
                     <i data-lucide="arrow-left" class="w-4 h-4"></i>
                     Volver al inicio
                 </a>
             </div>
-            
+
         </div>
-        
+
     </section>
 
     <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
