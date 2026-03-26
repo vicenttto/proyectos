@@ -1,16 +1,13 @@
-// 2. INICIALIZAR ANIMACIONES AOS
 AOS.init({
     duration: 1000,
     once: true,
     offset: 100
 });
 
-// 3. LÓGICA DEL MODO OSCURO / CLARO
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-// El tema ya fue aplicado en el <head> antes de pintar.
-// Aquí solo gestionamos el botón de toggle.
+
 themeToggle.addEventListener('click', () => {
     if (htmlElement.classList.contains('dark')) {
         htmlElement.classList.replace('dark', 'light');
@@ -21,7 +18,6 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Si el usuario cambia el tema del SO sin haber elegido manualmente → seguimos al sistema
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
         htmlElement.classList.remove('dark', 'light');
@@ -30,7 +26,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 
-// 4. MENÚ HAMBURGUESA MÓVIL
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuOverlay = document.getElementById('menu-overlay');
@@ -78,10 +73,8 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuOpen) closeMenu();
 });
 
-// 1. INICIALIZAR ICONOS LUCIDE
 lucide.createIcons();
 
-// 5. PARALLAX SUTIL EN LA IMAGEN DEL PROYECTO
 const proyectoWrapper = document.querySelector('.proyecto-wrapper');
 
 if (proyectoWrapper) {
@@ -89,11 +82,8 @@ if (proyectoWrapper) {
         const rect = proyectoWrapper.getBoundingClientRect();
         const windowH = window.innerHeight;
 
-        // Solo aplicar cuando el elemento es visible
         if (rect.bottom > 0 && rect.top < windowH) {
-            // Progreso de 0 (recién aparece) a 1 (ya salió)
             const progress = (windowH - rect.top) / (windowH + rect.height);
-            // Movimiento suave de ±20px
             const offset = (progress - 0.5) * 40;
             proyectoWrapper.style.transform = `translateY(${offset}px)`;
         }

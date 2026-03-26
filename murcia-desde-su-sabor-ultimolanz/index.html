@@ -15,16 +15,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <!-- TEMA: se ejecuta ANTES de pintar para evitar parpadeo -->
     <script>
         (function () {
             const saved = localStorage.getItem('theme');
             if (saved) {
-                // El usuario ya eligió manualmente → respetamos su elección
                 document.documentElement.classList.remove('dark', 'light');
                 document.documentElement.classList.add(saved);
             } else {
-                // Sin preferencia guardada → leemos el sistema operativo
                 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 document.documentElement.classList.remove('dark', 'light');
                 document.documentElement.classList.add(prefersDark ? 'dark' : 'light');
@@ -138,22 +135,17 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: NUESTRO PROYECTO -->
     <section class="py-24 px-6 max-w-7xl mx-auto">
 
-        <!-- Título con mismo estilo que bento -->
         <div class="mb-16 text-center md:text-left" data-aos="fade-right">
             <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Nuestro proyecto</h2>
             <div class="w-20 h-1.5 bg-m_red dark:bg-m_yellow mt-4 transition-colors duration-500"></div>
         </div>
 
-        <!-- Contenedor imagen con efectos -->
         <div class="proyecto-wrapper" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 
-            <!-- Borde accent: aparece con delay mayor -->
             <div class="proyecto-accent" data-aos="fade-right" data-aos-delay="600" data-aos-duration="800"></div>
 
-            <!-- Imagen: modo claro / oscuro -->
             <img src="assets/img/WEB-01.jpeg" alt="Murcia, desde su sabor" class="proyecto-img dark:hidden"
                 id="proyecto-img">
             <img src="assets/img/WEB-02.jpeg" alt="Murcia, desde su sabor" class="proyecto-img hidden dark:block"
@@ -162,19 +154,15 @@
 
     </section>
 
-    <!-- SECCIÓN: HABLANDO DE MURCIA -->
     <section id="hablando-murcia" class="py-24 px-6 max-w-6xl mx-auto">
 
-        <!-- Título -->
         <div class="mb-16 text-center md:text-left" data-aos="fade-right">
             <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Hablando de Murcia</h2>
             <div class="w-20 h-1.5 bg-m_red dark:bg-m_yellow mt-4 transition-colors duration-500"></div>
         </div>
 
-        <!-- Bento Asimétrico -->
         <div class="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-6">
 
-            <!-- CARD IZQUIERDA: Texto + CTA -->
             <div class="glass-card-video flex flex-col justify-center p-10 md:p-12" data-aos="fade-up"
                 data-aos-delay="100">
                 <div class="flex items-center gap-3 mb-6">
@@ -198,25 +186,19 @@
                 </a>
             </div>
 
-            <!-- CARD DERECHA: Video Preview -->
             <a href="hablando-de-murcia.html" class="glass-card-video p-6 block group" data-aos="fade-up"
                 data-aos-delay="200">
 
-                <!-- Container del thumbnail -->
                 <div class="video-thumbnail-container relative overflow-hidden rounded-2xl mb-4">
-                    <!-- TODO: Cambiar VIDEO_ID por el ID real de YouTube -->
                     <img src="https://img.youtube.com/vi/0xAMzauXBmM/maxresdefault.jpg" alt="Último episodio"
                         class="video-thumbnail w-full h-full object-cover aspect-video">
 
-                    <!-- Overlay oscuro al hover -->
                     <div
                         class="video-overlay absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <!-- Play icon -->
                         <i data-lucide="play-circle"
                             class="video-play-icon w-20 h-20 text-white drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
 
-                    <!-- Badge NUEVO (quitar cuando el video tenga más de 7 días) -->
                     <div
                         class="absolute top-4 right-4 bg-m_red dark:bg-m_yellow text-white dark:text-m_navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
                         Nuevo
@@ -236,7 +218,7 @@
                     <div class="flex items-center gap-4 text-sm opacity-50">
                         <div class="flex items-center gap-1">
                             <i data-lucide="calendar" class="w-4 h-4"></i>
-                            <span>Hoy</span>
+                            <span>Ayer</span>
                         </div>
                         <div class="flex items-center gap-1">
                             <i data-lucide="clock" class="w-4 h-4"></i>
@@ -258,7 +240,6 @@
             <div class="w-20 h-1.5 bg-m_red dark:bg-m_yellow mt-4 transition-colors duration-500"></div>
         </div>
 
-        <!-- Bento: 2 cards grandes centradas en 1 fila -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
@@ -280,7 +261,6 @@
     <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
-            <!-- Logos institucionales en fila -->
             <div class="flex flex-wrap justify-center md:justify-start items-center gap-5">
                 <img src="assets/logos/carm.png" alt="CARM" class="logo-footer logo-footer--lg">
                 <img src="assets/logos/itrem.png" alt="ITREM" class="logo-footer">
@@ -288,7 +268,6 @@
                 <img src="assets/logos/prtr.png" alt="PRTR" class="logo-footer logo-footer--lg">
             </div>
 
-            <!-- Copyright y redes -->
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
                     Copyright © 2026 Murcia Desde Su Sabor

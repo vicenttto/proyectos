@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    <!-- TEMA: se ejecuta ANTES de pintar para evitar parpadeo -->
     <script>
         (function () {
             const saved = localStorage.getItem('theme');
@@ -116,12 +115,10 @@
         </div>
     </header>
 
-    <!-- HERO CON VIDEO INTEGRADO -->
     <section id="hero-video" class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
 
         <div class="w-full max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
 
-            <!-- Encabezado -->
             <div class="text-center mb-12">
                 <span
                     class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
@@ -144,7 +141,6 @@
                 </div>
             </div>
 
-            <!-- Container del video con glassmorphism ALREDEDOR (no encima) -->
             <div class="video-embed-container relative p-2 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent border border-black/5 dark:border-white/10 backdrop-blur-sm shadow-2xl shadow-black/20 dark:shadow-black/60"
                 data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
 
@@ -157,13 +153,11 @@
                     </iframe>
                 </div>
 
-                <!-- Accent line -->
                 <div
                     class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-m_red to-m_red/50 dark:from-m_yellow dark:to-m_yellow/50 rounded-b-3xl">
                 </div>
             </div>
 
-            <!-- Descripción del episodio -->
             <div class="mt-12 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
                 <p class="text-lg md:text-xl leading-relaxed opacity-70">
                     En este primer episodio de Hablando de Murcia, Sean Frutos y Kuve se enfrentan a las preguntas de
@@ -175,7 +169,6 @@
                 </p>
             </div>
 
-            <!-- Botón volver (mismo estilo que CTA del index) -->
             <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="600">
                 <a href="index.html"
                     class="inline-flex items-center gap-2 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest">
@@ -188,10 +181,40 @@
 
     </section>
 
+    <section class="py-16 px-6 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-3">
+                    En colaboración con
+                </h3>
+                <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 py-8 px-6 rounded-2xl bg-black/[0.01] dark:bg-white/[0.02] border border-black/5 dark:border-white/5"
+                data-aos="fade-up" data-aos-delay="200">
+
+                <a href="https://web.murcia.es/" target="_blank" rel="noopener noreferrer"
+                    class="transition-transform hover:scale-105">
+                    <img src="assets/logos/ayto-dark.png" alt="Ayuntamiento de Murcia"
+                        class="logo-footer logo-footer--lg dark:hidden">
+                    <img src="assets/logos/ayto-color.png" alt="Ayuntamiento de Murcia"
+                        class="logo-footer logo-footer--lg hidden dark:block">
+                </a>
+
+                <a href="https://www.turismodemurcia.es/es/" target="_blank" rel="noopener noreferrer"
+                    class="transition-transform hover:scale-105">
+                    <img src="assets/logos/turismo-dark.png" alt="Turismo Murcia" class="logo-footer logo-footer--lg">
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
     <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
-            <!-- Logos institucionales en fila -->
             <div class="flex flex-wrap justify-center md:justify-start items-center gap-5">
                 <img src="assets/logos/carm.png" alt="CARM" class="logo-footer logo-footer--lg">
                 <img src="assets/logos/itrem.png" alt="ITREM" class="logo-footer">
@@ -199,7 +222,6 @@
                 <img src="assets/logos/prtr.png" alt="PRTR" class="logo-footer logo-footer--lg">
             </div>
 
-            <!-- Copyright y redes -->
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
                     Copyright © 2026 Murcia Desde Su Sabor
