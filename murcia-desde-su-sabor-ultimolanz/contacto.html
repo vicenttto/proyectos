@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hablando de Murcia - Murcia, desde su Sabor</title>
+    <title>Contacto - Murcia, desde su Sabor</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -64,7 +64,7 @@
         </a>
 
         <a href="hablando-de-murcia.html"
-            class="mobile-link text-2xl font-black uppercase mb-10 text-m_red dark:text-m_yellow transition-colors">
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
             Hablando de Murcia
         </a>
 
@@ -101,10 +101,9 @@
                     <li><a href="index.html"
                             class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
                     <li><a href="hablando-de-murcia.html"
-                            class="text-m_red dark:text-m_yellow">Hablando de Murcia</a>
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
                     </li>
-                    <li><a href="contacto.html"
-                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Contacto</a>
+                    <li><a href="contacto.html" class="text-m_red dark:text-m_yellow">Contacto</a>
                     </li>
                 </ul>
 
@@ -123,68 +122,73 @@
         </div>
     </header>
 
-    <section id="hero-video" class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
 
-        <div class="w-full max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
+        <div class="w-full max-w-2xl mx-auto">
 
-            <div class="text-center mb-12">
-                <span
-                    class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
-                    Hablando de Murcia
-                </span>
-
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-6">
-                    Capítulo 1: Kuve y Sean Frutos
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-4">
+                    Contacto
                 </h1>
+                <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
+            </div>
 
-                <div class="flex justify-center gap-6 text-sm opacity-60 mb-2">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span>25 marzo 2026</span>
+            <div class="contact-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+
+                <div class="flex items-center gap-3 mb-8">
+                    <i data-lucide="mail" class="w-6 h-6 text-m_red dark:text-m_yellow flex-shrink-0"></i>
+                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                        Escríbenos
+                    </span>
+                </div>
+
+                <form id="contact-form" novalidate>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre"
+                                required autocomplete="name">
+                            <span class="form-error" id="error-nombre"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com"
+                                required autocomplete="email">
+                            <span class="form-error" id="error-email"></span>
+                        </div>
+
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="clock" class="w-4 h-4"></i>
-                        <span>27:40</span>
+
+                    <div class="form-group mb-5">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" class="form-input"
+                            placeholder="¿De qué quieres hablarnos?" required>
+                        <span class="form-error" id="error-asunto"></span>
                     </div>
-                </div>
+
+                    <div class="form-group mb-8">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" class="form-input form-textarea"
+                            placeholder="Cuéntanos..." rows="5" required></textarea>
+                        <span class="form-error" id="error-mensaje"></span>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit" id="submit-btn"
+                            class="inline-flex items-center gap-3 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
+                            <i data-lucide="send" class="w-4 h-4" id="btn-icon"></i>
+                            <span id="btn-text">Enviar mensaje</span>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div id="form-feedback" class="form-feedback hidden mt-6"></div>
+
             </div>
-
-            <div class="video-embed-container relative p-2 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 dark:from-white/5 dark:to-transparent border border-black/5 dark:border-white/10 backdrop-blur-sm shadow-2xl shadow-black/20 dark:shadow-black/60"
-                data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-
-                <div class="relative rounded-2xl overflow-hidden" style="padding-bottom: 56.25%; height: 0;">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0xAMzauXBmM"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                        style="position: absolute; top: 0; left: 0;">
-                    </iframe>
-                </div>
-
-                <div
-                    class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-m_red to-m_red/50 dark:from-m_yellow dark:to-m_yellow/50 rounded-b-3xl">
-                </div>
-            </div>
-
-            <div class="mt-12 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-                <p class="text-lg md:text-xl leading-relaxed opacity-70">
-                    En este primer episodio de Hablando de Murcia, Sean Frutos y Kuve se enfrentan a las preguntas de
-                    Leonardo
-                    Cano en una charla sin filtros sobre su relación con la ciudad.
-
-                    Recuerdos, rincones, música y mucho sentimiento murciano en una conversación cercana que muestra
-                    otra forma de vivir Murcia.
-                </p>
-            </div>
-
-            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="600">
-                <a href="index.html"
-                    class="inline-flex items-center gap-2 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                    Volver al inicio
-                </a>
-            </div>
-
         </div>
 
     </section>
@@ -251,6 +255,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 
 </body>
 
