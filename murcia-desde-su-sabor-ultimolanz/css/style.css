@@ -636,6 +636,10 @@ html:not(.dark) .evento-card {
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.dark .evento-accent-line {
+    background-color: #FFD700;
+}
+
 .evento-card:hover .evento-accent-line {
     transform: scaleX(1);
 }
