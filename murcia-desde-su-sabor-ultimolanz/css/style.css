@@ -509,208 +509,146 @@ html:not(.dark) .form-input:focus {
 }
 
 
+/* =========================================
+   EVENTO CARDS — imagen de fondo + overlay
+   ========================================= */
+
 .evento-card {
     position: relative;
     overflow: hidden;
-    padding: 2.5rem;
     border-width: 1px;
     border-style: solid;
     border-radius: 24px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        border-color 0.4s ease,
-        background-color 0.4s ease,
-        background-image 0.4s ease,
-        box-shadow 0.4s ease;
+    border-color: rgba(255, 255, 255, 0.12);
+    min-height: 320px;
+    cursor: pointer;
+    transition: border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 html:not(.dark) .evento-card {
-    background-color: rgba(0, 0, 0, 0.02);
-    border-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
+/* Card featured más alta */
 .evento-card--featured {
-    padding: 3.5rem;
-    background-image: linear-gradient(135deg,
-            rgba(227, 30, 36, 0.06) 0%,
-            rgba(227, 30, 36, 0.02) 50%,
-            transparent 100%);
-}
-
-.dark .evento-card--featured {
-    background-image: linear-gradient(135deg,
-            rgba(255, 215, 0, 0.07) 0%,
-            rgba(255, 215, 0, 0.02) 50%,
-            transparent 100%);
-}
-
-.evento-card--featured .evento-numero {
-    font-size: 10rem;
-    line-height: 1;
+    min-height: 420px;
 }
 
 @media (min-width: 768px) {
-    .evento-card--featured .evento-numero {
-        font-size: 14rem;
+    .evento-card--featured {
+        min-height: 500px;
+    }
+
+    .evento-card {
+        min-height: 380px;
     }
 }
 
-.grid .evento-card:first-child {
-    background-image: linear-gradient(225deg,
-            rgba(227, 30, 36, 0.05) 0%,
-            rgba(227, 30, 36, 0.015) 40%,
-            transparent 100%);
-}
-
-.dark .grid .evento-card:first-child {
-    background-image: linear-gradient(225deg,
-            rgba(255, 215, 0, 0.06) 0%,
-            rgba(255, 215, 0, 0.015) 40%,
-            transparent 100%);
-}
-
-.grid .evento-card:last-child {
-    background-image: linear-gradient(45deg,
-            transparent 0%,
-            rgba(227, 30, 36, 0.015) 40%,
-            rgba(227, 30, 36, 0.05) 100%);
-}
-
-.dark .grid .evento-card:last-child {
-    background-image: linear-gradient(45deg,
-            transparent 0%,
-            rgba(255, 215, 0, 0.015) 40%,
-            rgba(255, 215, 0, 0.06) 100%);
-}
-
-.evento-card:hover {
-    transform: translateY(-8px);
-}
-
-.dark .evento-card--featured:hover {
-    border-color: #FFD700;
-    background-color: rgba(255, 255, 255, 0.05);
-    background-image: linear-gradient(135deg,
-            rgba(255, 215, 0, 0.11) 0%,
-            rgba(255, 215, 0, 0.04) 50%,
-            transparent 100%);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-}
-
-html:not(.dark) .evento-card--featured:hover {
-    border-color: #E31E24;
-    background-color: rgba(255, 255, 255, 0.9);
-    background-image: linear-gradient(135deg,
-            rgba(227, 30, 36, 0.08) 0%,
-            rgba(227, 30, 36, 0.03) 50%,
-            transparent 100%);
-    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
-}
-
-.dark .grid .evento-card:first-child:hover {
-    border-color: #FFD700;
-    background-color: rgba(255, 255, 255, 0.05);
-    background-image: linear-gradient(225deg,
-            rgba(255, 215, 0, 0.12) 0%,
-            rgba(255, 215, 0, 0.04) 40%,
-            transparent 100%);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-}
-
-html:not(.dark) .grid .evento-card:first-child:hover {
-    border-color: #E31E24;
-    background-color: rgba(255, 255, 255, 0.9);
-    background-image: linear-gradient(225deg,
-            rgba(227, 30, 36, 0.08) 0%,
-            rgba(227, 30, 36, 0.03) 40%,
-            transparent 100%);
-    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
-}
-
-.dark .grid .evento-card:last-child:hover {
-    border-color: #FFD700;
-    background-color: rgba(255, 255, 255, 0.05);
-    background-image: linear-gradient(45deg,
-            transparent 0%,
-            rgba(255, 215, 0, 0.04) 40%,
-            rgba(255, 215, 0, 0.12) 100%);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-}
-
-html:not(.dark) .grid .evento-card:last-child:hover {
-    border-color: #E31E24;
-    background-color: rgba(255, 255, 255, 0.9);
-    background-image: linear-gradient(45deg,
-            transparent 0%,
-            rgba(227, 30, 36, 0.03) 40%,
-            rgba(227, 30, 36, 0.08) 100%);
-    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
-}
-
-.evento-numero {
+/* Imagen de fondo */
+.evento-bg {
     position: absolute;
-    top: -1rem;
-    right: 1.5rem;
-    font-size: 8rem;
-    font-weight: 900;
-    line-height: 1;
-    color: #E31E24;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-    font-family: 'Montserrat', sans-serif;
-    transition: opacity 0.4s ease;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a2e;
+    /* placeholder oscuro mientras no hay imagen */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.dark .evento-numero {
-    color: #FFD700;
-    opacity: 0.07;
+.evento-card:hover .evento-bg {
+    transform: scale(1.05);
 }
 
-.evento-card:hover .evento-numero {
-    opacity: 0.13;
+/* Overlay oscuro */
+.evento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.2) 100%);
+    transition: background 0.4s ease;
 }
 
+.evento-card:hover .evento-overlay {
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.65) 50%,
+            rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* Contenido sobre el overlay */
 .evento-content {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    z-index: 2;
 }
 
+.evento-card--featured .evento-content {
+    padding: 2.5rem;
+}
+
+/* Parte siempre visible: icono + título */
+.evento-content-top {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.evento-card:hover .evento-content-top {
+    transform: translateY(-4px);
+}
+
+/* Parte oculta hasta hover: línea + descripción */
+.evento-content-reveal {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.4s ease 0.1s;
+}
+
+.evento-card:hover .evento-content-reveal {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* Hover elevación sutil */
+.evento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Línea accent — siempre m_red, sobre imagen siempre se ve igual */
 .evento-accent-line {
     width: 2.5rem;
     height: 3px;
     background-color: #E31E24;
     border-radius: 2px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 0.75rem;
     transform-origin: left center;
     transform: scaleX(0);
-    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.2s,
-        background-color 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.dark .evento-accent-line {
-    background-color: #FFD700;
-}
-
-.evento-card.aos-animate .evento-accent-line {
+.evento-card:hover .evento-accent-line {
     transform: scaleX(1);
 }
 
+/* Icono — siempre blanco sobre imagen */
 .evento-icon {
-    width: 1.75rem;
-    height: 1.75rem;
-    color: #E31E24;
+    width: 1.6rem;
+    height: 1.6rem;
+    color: #ffffff;
     flex-shrink: 0;
-    transition: color 0.3s ease;
 }
 
-.dark .evento-icon {
-    color: #FFD700;
-}
-
+/* Animaciones de icono */
 @keyframes iconBounce {
     0% {
         transform: translateY(0) scale(1);
@@ -779,4 +717,25 @@ html:not(.dark) .grid .evento-card:last-child:hover {
 
 .grid .evento-card:last-child:hover .evento-icon {
     animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* MÓVIL — estado hover permanente */
+@media (max-width: 767px) {
+    .evento-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .evento-content-reveal {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .evento-accent-line {
+        transform: scaleX(1);
+    }
+
+    .evento-card:hover .evento-bg {
+        transform: none;
+    }
 }
