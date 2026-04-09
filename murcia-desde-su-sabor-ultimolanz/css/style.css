@@ -507,3 +507,276 @@ html:not(.dark) .form-input:focus {
     display: inline-block;
     flex-shrink: 0;
 }
+
+
+.evento-card {
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        border-color 0.4s ease,
+        background-color 0.4s ease,
+        background-image 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+html:not(.dark) .evento-card {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.evento-card--featured {
+    padding: 3.5rem;
+    background-image: linear-gradient(135deg,
+            rgba(227, 30, 36, 0.06) 0%,
+            rgba(227, 30, 36, 0.02) 50%,
+            transparent 100%);
+}
+
+.dark .evento-card--featured {
+    background-image: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.07) 0%,
+            rgba(255, 215, 0, 0.02) 50%,
+            transparent 100%);
+}
+
+.evento-card--featured .evento-numero {
+    font-size: 10rem;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .evento-card--featured .evento-numero {
+        font-size: 14rem;
+    }
+}
+
+.grid .evento-card:first-child {
+    background-image: linear-gradient(225deg,
+            rgba(227, 30, 36, 0.05) 0%,
+            rgba(227, 30, 36, 0.015) 40%,
+            transparent 100%);
+}
+
+.dark .grid .evento-card:first-child {
+    background-image: linear-gradient(225deg,
+            rgba(255, 215, 0, 0.06) 0%,
+            rgba(255, 215, 0, 0.015) 40%,
+            transparent 100%);
+}
+
+.grid .evento-card:last-child {
+    background-image: linear-gradient(45deg,
+            transparent 0%,
+            rgba(227, 30, 36, 0.015) 40%,
+            rgba(227, 30, 36, 0.05) 100%);
+}
+
+.dark .grid .evento-card:last-child {
+    background-image: linear-gradient(45deg,
+            transparent 0%,
+            rgba(255, 215, 0, 0.015) 40%,
+            rgba(255, 215, 0, 0.06) 100%);
+}
+
+.evento-card:hover {
+    transform: translateY(-8px);
+}
+
+.dark .evento-card--featured:hover {
+    border-color: #FFD700;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.11) 0%,
+            rgba(255, 215, 0, 0.04) 50%,
+            transparent 100%);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+html:not(.dark) .evento-card--featured:hover {
+    border-color: #E31E24;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: linear-gradient(135deg,
+            rgba(227, 30, 36, 0.08) 0%,
+            rgba(227, 30, 36, 0.03) 50%,
+            transparent 100%);
+    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
+}
+
+.dark .grid .evento-card:first-child:hover {
+    border-color: #FFD700;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: linear-gradient(225deg,
+            rgba(255, 215, 0, 0.12) 0%,
+            rgba(255, 215, 0, 0.04) 40%,
+            transparent 100%);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+html:not(.dark) .grid .evento-card:first-child:hover {
+    border-color: #E31E24;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: linear-gradient(225deg,
+            rgba(227, 30, 36, 0.08) 0%,
+            rgba(227, 30, 36, 0.03) 40%,
+            transparent 100%);
+    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
+}
+
+.dark .grid .evento-card:last-child:hover {
+    border-color: #FFD700;
+    background-color: rgba(255, 255, 255, 0.05);
+    background-image: linear-gradient(45deg,
+            transparent 0%,
+            rgba(255, 215, 0, 0.04) 40%,
+            rgba(255, 215, 0, 0.12) 100%);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+html:not(.dark) .grid .evento-card:last-child:hover {
+    border-color: #E31E24;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: linear-gradient(45deg,
+            transparent 0%,
+            rgba(227, 30, 36, 0.03) 40%,
+            rgba(227, 30, 36, 0.08) 100%);
+    box-shadow: 0 20px 40px rgba(227, 30, 36, 0.08);
+}
+
+.evento-numero {
+    position: absolute;
+    top: -1rem;
+    right: 1.5rem;
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #E31E24;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: opacity 0.4s ease;
+}
+
+.dark .evento-numero {
+    color: #FFD700;
+    opacity: 0.07;
+}
+
+.evento-card:hover .evento-numero {
+    opacity: 0.13;
+}
+
+.evento-content {
+    position: relative;
+    z-index: 1;
+}
+
+.evento-accent-line {
+    width: 2.5rem;
+    height: 3px;
+    background-color: #E31E24;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.2s,
+        background-color 0.5s ease;
+}
+
+.dark .evento-accent-line {
+    background-color: #FFD700;
+}
+
+.evento-card.aos-animate .evento-accent-line {
+    transform: scaleX(1);
+}
+
+.evento-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #E31E24;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.dark .evento-icon {
+    color: #FFD700;
+}
+
+@keyframes iconBounce {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    30% {
+        transform: translateY(-5px) scale(1.15);
+    }
+
+    55% {
+        transform: translateY(2px) scale(0.95);
+    }
+
+    75% {
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes iconSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    40% {
+        transform: rotate(20deg) scale(1.15);
+    }
+
+    70% {
+        transform: rotate(-8deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes iconPop {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.3);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.evento-card--featured:hover .evento-icon {
+    animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.grid .evento-card:first-child:hover .evento-icon {
+    animation: iconSpin 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.grid .evento-card:last-child:hover .evento-icon {
+    animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

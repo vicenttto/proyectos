@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Murcia, desde su Sabor</title>
+    <title>Eventos - Murcia, desde su Sabor</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -62,17 +62,14 @@
             class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
             Inicio
         </a>
-
         <a href="hablando-de-murcia.html"
             class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
             Hablando de Murcia
         </a>
-
         <a href="eventos.html"
-            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            class="mobile-link text-2xl font-black uppercase mb-10 text-m_red dark:text-m_yellow transition-colors">
             Eventos
         </a>
-
         <a href="contacto.html"
             class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
             Contacto
@@ -91,7 +88,6 @@
 
     <header
         class="fixed top-0 w-full z-[60] px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
-
         <div class="max-w-7xl mx-auto flex justify-between items-center">
 
             <div class="logo-container h-16 transition-all duration-300">
@@ -108,10 +104,9 @@
                     <li><a href="hablando-de-murcia.html"
                             class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
                     </li>
-                    <li><a href="eventos.html"
-                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Eventos</a></li>
-                    <li><a href="contacto.html" class="text-m_red dark:text-m_yellow">Contacto</a>
-                    </li>
+                    <li><a href="eventos.html" class="text-m_red dark:text-m_yellow">Eventos</a></li>
+                    <li><a href="contacto.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Contacto</a></li>
                 </ul>
 
                 <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
@@ -129,75 +124,82 @@
         </div>
     </header>
 
-    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-24">
-
-        <div class="w-full max-w-2xl mx-auto">
-
+    <section class="relative pt-32 pb-24 px-6">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-4">
-                    Contacto
+                    Eventos
                 </h1>
                 <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
             </div>
 
-            <div class="contact-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+            <div class="evento-card evento-card--featured mb-6" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="900">
+                <div class="evento-numero">01</div>
+                <div class="evento-content">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i data-lucide="utensils" class="evento-icon"></i>
+                        <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                            Gastronomía
+                        </span>
+                    </div>
+                    <h2
+                        class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter mb-4 leading-tight">
+                        Ciclos Gastronómicos
+                    </h2>
+                    <div class="evento-accent-line"></div>
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed max-w-2xl">
+                        Descubre el sabor de Murcia como nunca antes: producto local, chefs y degustaciones
+                        que te harán vivir la gastronomía desde dentro.
+                    </p>
+                </div>
+            </div>
 
-                <div class="flex items-center gap-3 mb-8">
-                    <i data-lucide="mail" class="w-6 h-6 text-m_red dark:text-m_yellow flex-shrink-0"></i>
-                    <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
-                        Escríbenos
-                    </span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="evento-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+                    <div class="evento-numero">02</div>
+                    <div class="evento-content">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="wine" class="evento-icon"></i>
+                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                                Vino &amp; Vermut
+                            </span>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-3 leading-tight">
+                            Catas de Vino y Vermut
+                        </h2>
+                        <div class="evento-accent-line"></div>
+                        <p class="text-sm md:text-base opacity-60 leading-relaxed">
+                            Sumérgete en el mundo del vino y el vermut de Murcia y déjate sorprender
+                            por sus matices, su carácter y su esencia. Una experiencia para disfrutar,
+                            aprender… y brindar.
+                        </p>
+                    </div>
                 </div>
 
-                <form id="contact-form" novalidate>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-
-                        <div class="form-group">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre"
-                                required autocomplete="name">
-                            <span class="form-error" id="error-nombre"></span>
+                <div class="evento-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+                    <div class="evento-numero">03</div>
+                    <div class="evento-content">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="beer" class="evento-icon"></i>
+                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                                Cerveza
+                            </span>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com"
-                                required autocomplete="email">
-                            <span class="form-error" id="error-email"></span>
-                        </div>
-
+                        <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-3 leading-tight">
+                            Catas de Cerveza Estrella de Levante
+                        </h2>
+                        <div class="evento-accent-line"></div>
+                        <p class="text-sm md:text-base opacity-60 leading-relaxed">
+                            Explora el lado más sorprendente de la cerveza con catas y maridajes
+                            que despertarán todos tus sentidos.
+                        </p>
                     </div>
-
-                    <div class="form-group mb-5">
-                        <label for="asunto" class="form-label">Asunto</label>
-                        <input type="text" id="asunto" name="asunto" class="form-input"
-                            placeholder="¿De qué quieres hablarnos?" required>
-                        <span class="form-error" id="error-asunto"></span>
-                    </div>
-
-                    <div class="form-group mb-8">
-                        <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" class="form-input form-textarea"
-                            placeholder="Cuéntanos..." rows="5" required></textarea>
-                        <span class="form-error" id="error-mensaje"></span>
-                    </div>
-
-                    <div class="flex justify-center">
-                        <button type="submit" id="submit-btn"
-                            class="inline-flex items-center gap-3 px-10 py-4 bg-m_red text-white dark:bg-m_yellow dark:text-m_navy font-bold rounded-full hover:scale-105 transition-transform shadow-xl shadow-m_red/20 dark:shadow-m_yellow/10 uppercase text-xs tracking-widest disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100">
-                            <i data-lucide="send" class="w-4 h-4" id="btn-icon"></i>
-                            <span id="btn-text">Enviar mensaje</span>
-                        </button>
-                    </div>
-
-                </form>
-
-                <div id="form-feedback" class="form-feedback hidden mt-6"></div>
+                </div>
 
             </div>
         </div>
-
     </section>
 
     <section class="py-16 px-6 border-t border-black/5 dark:border-white/5">
@@ -227,7 +229,6 @@
                 </a>
 
             </div>
-
         </div>
     </section>
 
@@ -262,7 +263,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/contact.js"></script>
 
 </body>
 
