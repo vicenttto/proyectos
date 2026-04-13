@@ -1086,7 +1086,7 @@ html:not(.dark) .ticket {
         align-items: center;
         justify-content: flex-start;
         padding: 1rem 1.25rem;
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .ticket-img-wrapper--logo,
