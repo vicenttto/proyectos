@@ -509,10 +509,6 @@ html:not(.dark) .form-input:focus {
 }
 
 
-/* =========================================
-   EVENTO CARDS — imagen de fondo + overlay
-   ========================================= */
-
 .evento-card {
     position: relative;
     overflow: hidden;
@@ -531,7 +527,6 @@ html:not(.dark) .evento-card {
     border-color: rgba(0, 0, 0, 0.08);
 }
 
-/* Card featured más alta */
 .evento-card--featured {
     min-height: 420px;
 }
@@ -546,14 +541,12 @@ html:not(.dark) .evento-card {
     }
 }
 
-/* Imagen de fondo */
 .evento-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
     background-color: #1a1a2e;
-    /* placeholder oscuro mientras no hay imagen */
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -561,7 +554,6 @@ html:not(.dark) .evento-card {
     transform: scale(1.05);
 }
 
-/* Overlay oscuro */
 .evento-overlay {
     position: absolute;
     inset: 0;
@@ -579,7 +571,6 @@ html:not(.dark) .evento-card {
             rgba(0, 0, 0, 0.35) 100%);
 }
 
-/* Contenido sobre el overlay */
 .evento-content {
     position: absolute;
     inset: 0;
@@ -594,7 +585,6 @@ html:not(.dark) .evento-card {
     padding: 2.5rem;
 }
 
-/* Parte siempre visible: icono + título */
 .evento-content-top {
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -603,7 +593,7 @@ html:not(.dark) .evento-card {
     transform: translateY(-4px);
 }
 
-/* Parte oculta hasta hover: línea + descripción */
+
 .evento-content-reveal {
     max-height: 0;
     overflow: hidden;
@@ -617,13 +607,11 @@ html:not(.dark) .evento-card {
     opacity: 1;
 }
 
-/* Hover elevación sutil */
 .evento-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Línea accent — siempre m_red, sobre imagen siempre se ve igual */
 .evento-accent-line {
     width: 2.5rem;
     height: 3px;
@@ -644,7 +632,6 @@ html:not(.dark) .evento-card {
     transform: scaleX(1);
 }
 
-/* Icono — siempre blanco sobre imagen */
 .evento-icon {
     width: 1.6rem;
     height: 1.6rem;
@@ -652,7 +639,6 @@ html:not(.dark) .evento-card {
     flex-shrink: 0;
 }
 
-/* Animaciones de icono */
 @keyframes iconBounce {
     0% {
         transform: translateY(0) scale(1);
@@ -723,7 +709,7 @@ html:not(.dark) .evento-card {
     animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* MÓVIL — estado hover permanente */
+
 @media (max-width: 767px) {
     .evento-card:hover {
         transform: none;
@@ -744,11 +730,7 @@ html:not(.dark) .evento-card {
     }
 }
 
-/* =========================================
-   CICLOS GASTRONÓMICOS — texto + tickets
-   ========================================= */
 
-/* Bloque de texto con línea vertical accent */
 .ciclos-texto-body {
     position: relative;
     padding-left: 1.5rem;
@@ -760,7 +742,6 @@ html:not(.dark) .evento-card {
     border-left-color: #FFD700;
 }
 
-/* TICKET */
 .ticket {
     position: relative;
     display: flex;
@@ -792,7 +773,6 @@ html:not(.dark) .ticket {
     border-color: rgba(255, 215, 0, 0.3);
 }
 
-/* Cuerpo izquierdo del ticket */
 .ticket-body {
     display: flex;
     align-items: center;
@@ -801,7 +781,6 @@ html:not(.dark) .ticket {
     padding: 1.5rem 1.75rem;
 }
 
-/* Número de ciclo grande */
 .ticket-ciclo {
     font-size: 2.5rem;
     font-weight: 900;
@@ -824,7 +803,6 @@ html:not(.dark) .ticket {
     opacity: 0.5;
 }
 
-/* Info del ticket */
 .ticket-info {
     flex: 1;
 }
@@ -860,7 +838,6 @@ html:not(.dark) .ticket {
     flex-shrink: 0;
 }
 
-/* Línea divisoria punteada */
 .ticket-divider {
     width: 1px;
     background-image: repeating-linear-gradient(to bottom,
@@ -885,7 +862,6 @@ html:not(.dark) .ticket {
     opacity: 0.6;
 }
 
-/* Semicírculos en la línea divisoria */
 .ticket-notch {
     position: absolute;
     width: 16px;
@@ -909,7 +885,6 @@ html:not(.dark) .ticket {
     bottom: -8px;
 }
 
-/* Stub derecho con botón */
 .ticket-stub {
     display: flex;
     align-items: center;
@@ -933,7 +908,6 @@ html:not(.dark) .ticket {
     background-color: rgba(255, 215, 0, 0.15);
 }
 
-/* Botón del ticket */
 .ticket-btn {
     display: inline-flex;
     align-items: center;
@@ -969,7 +943,6 @@ html:not(.dark) .ticket {
     box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
-/* Móvil — stub debajo del body */
 @media (max-width: 639px) {
     .ticket {
         flex-direction: column;
@@ -1021,11 +994,7 @@ html:not(.dark) .ticket {
 
 }
 
-/* =========================================
-   TICKETS CON IMAGEN EN STUB
-   ========================================= */
 
-/* Stub ampliado para imagen + botón */
 .ticket-stub--con-imagen {
     flex-direction: column;
     align-items: center;
@@ -1034,7 +1003,6 @@ html:not(.dark) .ticket {
     min-width: 210px;
 }
 
-/* Wrapper para logos (fondo blanco controlado) */
 .ticket-img-wrapper--logo {
     width: 160px;
     height: 150px;
@@ -1048,14 +1016,12 @@ html:not(.dark) .ticket {
     transform: scale(1.04);
 }
 
-/* mix-blend-mode: multiply elimina el fondo blanco del JPG en ambos modos */
 .ticket-img--logo {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-/* Wrapper para imágenes artísticas (Marulanda) */
 .ticket-img-wrapper--art {
     width: 160px;
     height: 120px;
@@ -1069,7 +1035,6 @@ html:not(.dark) .ticket {
     transform: scale(1.04);
 }
 
-/* Marulanda — contain para verla entera sin recorte */
 .ticket-img--art {
     width: 100%;
     height: 100%;
@@ -1077,7 +1042,6 @@ html:not(.dark) .ticket {
     border-radius: 8px;
 }
 
-/* Móvil — stub con imagen en fila */
 @media (max-width: 639px) {
     .ticket-stub--con-imagen {
         min-width: unset;
@@ -1096,9 +1060,6 @@ html:not(.dark) .ticket {
     }
 }
 
-/* =========================================
-   ESTRELLAS CERVEZA — cascada al hover
-   ========================================= */
 
 .ticket-estrellas {
     display: flex;
@@ -1120,7 +1081,6 @@ html:not(.dark) .ticket {
     flex-shrink: 0;
 }
 
-/* Desktop — iluminación en cascada al hover */
 @media (min-width: 640px) {
     .ticket:hover .ticket-estrella {
         opacity: 1;
@@ -1133,7 +1093,6 @@ html:not(.dark) .ticket {
     }
 }
 
-/* Móvil — siempre iluminadas */
 @media (max-width: 639px) {
     .ticket-estrella {
         opacity: 1;
@@ -1145,9 +1104,7 @@ html:not(.dark) .ticket {
     }
 }
 
-/* =========================================
-   BOTÓN FLOTANTE — VOLVER A EVENTOS
-   ========================================= */
+
 
 .btn-volver-eventos {
     position: fixed;
@@ -1179,7 +1136,6 @@ html:not(.dark) .ticket {
     box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25);
 }
 
-/* Hover desktop — expand hacia la izquierda */
 @media (min-width: 640px) {
     .btn-volver-eventos:hover {
         width: 148px;
@@ -1224,7 +1180,6 @@ html:not(.dark) .ticket {
     }
 }
 
-/* Móvil — siempre expandido */
 @media (max-width: 639px) {
     .btn-volver-eventos {
         width: 140px;
@@ -1238,9 +1193,7 @@ html:not(.dark) .ticket {
     }
 }
 
-/* =========================================
-   ILUSTRACIONES DECORATIVAS DE FONDO
-   ========================================= */
+
 
 .ilustracion-fondo {
     position: fixed;
