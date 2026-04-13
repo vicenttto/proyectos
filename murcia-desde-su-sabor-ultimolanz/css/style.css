@@ -1237,3 +1237,46 @@ html:not(.dark) .ticket {
         max-width: 100px;
     }
 }
+
+/* =========================================
+   ILUSTRACIONES DECORATIVAS DE FONDO
+   ========================================= */
+
+.ilustracion-fondo {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.ilust-grande {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    width: 350px;
+    opacity: 0.15;
+}
+
+.ilust-pequena {
+    position: absolute;
+    top: 5rem;
+    left: -1rem;
+    width: 200px;
+    opacity: 0.10;
+}
+
+.dark .ilust-grande,
+.dark .ilust-pequena {
+    opacity: 0.15;
+}
+
+@media (max-width: 767px) {
+    .ilust-grande {
+        width: 220px;
+    }
+
+    .ilust-pequena {
+        width: 130px;
+    }
+}
