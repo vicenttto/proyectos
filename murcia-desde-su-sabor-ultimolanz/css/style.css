@@ -1090,8 +1090,8 @@ html:not(.dark) .ticket {
 
     .ticket-img-wrapper--logo,
     .ticket-img-wrapper--art {
-        width: 100px;
-        height: 65px;
+        width: 160px;
+        height: 100px;
         flex-shrink: 0;
     }
 }
