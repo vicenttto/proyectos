@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catas de Cerveza - Murcia, desde su Sabor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.classList.remove('dark', 'light');
+                document.documentElement.classList.add(saved);
+            } else {
+                document.documentElement.classList.add('light');
+            }
+        })();
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        m_navy: '#1D2338',
+                        m_red: '#E31E24',
+                        m_yellow: '#FFD700',
+                        m_green: '#2D5A27'
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="font-montserrat antialiased transition-colors duration-500 bg-white dark:bg-m_navy text-m_navy dark:text-white">
+
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-black/40 z-[54] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-m_navy z-[55] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8 pt-28 shadow-2xl border-l border-black/5 dark:border-white/10">
+
+        <a href="index.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Inicio
+        </a>
+        <a href="hablando-de-murcia.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Hablando de Murcia
+        </a>
+        <a href="eventos.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Eventos
+        </a>
+        <a href="contacto.html"
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
+            Contacto
+        </a>
+
+        <div class="mt-auto flex gap-6 pb-10 border-t border-black/5 dark:border-white/10 pt-8">
+            <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+        class="fixed top-0 w-full z-[60] px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+            <div class="logo-container h-16 transition-all duration-300">
+                <a href="index.html" class="block h-full group">
+                    <img src="assets/img/logo-navy.png" alt="Logo" class="h-full object-contain dark:hidden">
+                    <img src="assets/img/logo-white.png" alt="Logo" class="h-full object-contain hidden dark:block">
+                </a>
+            </div>
+
+            <nav class="flex items-center gap-4">
+                <ul class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-widest">
+                    <li><a href="index.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Inicio</a></li>
+                    <li><a href="hablando-de-murcia.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Hablando de Murcia</a>
+                    </li>
+                    <li><a href="eventos.html" class="text-m_red dark:text-m_yellow">Eventos</a></li>
+                    <li><a href="contacto.html"
+                            class="hover:text-m_red dark:hover:text-m_yellow transition-colors">Contacto</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                    <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-m_yellow"></i>
+                    <i data-lucide="moon" class="block dark:hidden w-5 h-5 text-m_navy"></i>
+                </button>
+
+                <button id="menu-toggle" class="md:hidden p-2 focus:outline-none" aria-label="Abrir menú">
+                    <div id="menu-icon-wrapper" class="menu-icon-wrapper">
+                        <i data-lucide="menu" id="icon-menu" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="icon-close" class="w-6 h-6 menu-icon-hidden"></i>
+                    </div>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="relative pt-32 pb-24 px-6">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Título -->
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
+                <span
+                    class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
+                    Eventos
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-4">
+                    Catas de Cerveza
+                </h1>
+                <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
+            </div>
+
+            <!-- Logo Estrella de Levante + texto -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
+
+                <!-- Logo dual por modo -->
+                <div class="flex justify-center mb-10">
+                    <img src="assets/img/cerveza/estrella-claro.png" alt="Estrella de Levante"
+                        class="h-24 md:h-28 object-contain dark:hidden">
+                    <img src="assets/img/cerveza/estrella-oscuro.png" alt="Estrella de Levante"
+                        class="h-24 md:h-28 object-contain hidden dark:block">
+                </div>
+
+                <p class="text-xl md:text-2xl font-semibold leading-relaxed opacity-80 mb-8 italic">
+                    Descubre la cerveza desde una nueva perspectiva a través de una experiencia que
+                    combina sabor, conocimiento y gastronomía.
+                </p>
+
+                <div class="ciclos-texto-body">
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed mb-5">
+                        Las catas de Estrella de Levante dentro de "Murcia, desde su Sabor" ofrecen sesiones
+                        guiadas en las que conocer sus distintas variedades, procesos de elaboración y matices,
+                        poniendo en valor uno de los productos más representativos de nuestro territorio.
+                    </p>
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed mb-5">
+                        Cada sesión, realizada en el Centro Municipal Gastronómico, incluye un recorrido por
+                        diferentes estilos de cerveza, acompañado de propuestas gastronómicas pensadas para
+                        resaltar sus características y crear una experiencia completa.
+                    </p>
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed">
+                        Una forma diferente de disfrutar la cerveza, aprender a apreciarla y descubrir
+                        todo su potencial.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- TICKETS -->
+            <div class="space-y-4">
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">01</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Viernes 17 de abril · 20:00h</span>
+                            </div>
+                            <div class="ticket-estrellas">
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.08s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.16s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.24s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.32s"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">02</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Viernes 24 de abril · 20:00h</span>
+                            </div>
+                            <div class="ticket-estrellas">
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.08s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.16s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.24s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.32s"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">03</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Viernes 8 de mayo · 20:00h</span>
+                            </div>
+                            <div class="ticket-estrellas">
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.08s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.16s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.24s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.32s"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">04</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Viernes 15 de mayo · 20:00h</span>
+                            </div>
+                            <div class="ticket-estrellas">
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.08s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.16s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.24s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.32s"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">05</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Viernes 22 de mayo · 20:00h</span>
+                            </div>
+                            <div class="ticket-estrellas">
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.08s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.16s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.24s"></i>
+                                <i data-lucide="star" class="ticket-estrella" style="--delay:0.32s"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EN COLABORACIÓN CON -->
+    <section class="py-16 px-6 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="text-center mb-10" data-aos="fade-up">
+                <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 py-8 px-6 rounded-2xl bg-black/[0.01] dark:bg-white/[0.02] border border-black/5 dark:border-white/5"
+                data-aos="fade-up" data-aos-delay="200">
+
+                <a href="https://web.murcia.es/" target="_blank" rel="noopener noreferrer"
+                    class="transition-transform hover:scale-105">
+                    <img src="assets/logos/ayto-dark.png" alt="Ayuntamiento de Murcia"
+                        class="logo-footer logo-footer--lg dark:hidden">
+                    <img src="assets/logos/ayto-color.png" alt="Ayuntamiento de Murcia"
+                        class="logo-footer logo-footer--lg hidden dark:block">
+                </a>
+
+                <a href="https://www.turismodemurcia.es/es/" target="_blank" rel="noopener noreferrer"
+                    class="transition-transform hover:scale-105">
+                    <img src="assets/logos/turismo-dark.png" alt="Turismo Murcia" class="logo-footer logo-footer--lg">
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+
+            <div class="flex flex-wrap justify-center md:justify-start items-center gap-5">
+                <img src="assets/logos/carm.png" alt="CARM" class="logo-footer logo-footer--lg">
+                <img src="assets/logos/itrem.png" alt="ITREM" class="logo-footer">
+                <img src="assets/logos/ue.png" alt="Unión Europea" class="logo-footer">
+                <img src="assets/logos/prtr.png" alt="PRTR" class="logo-footer logo-footer--lg">
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+                    Copyright © 2026 Murcia Desde Su Sabor
+                </p>
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/murciadesdesusabor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@MurciaDesdeSuSabor" class="social-icon" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
