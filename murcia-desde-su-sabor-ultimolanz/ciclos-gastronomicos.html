@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos - Murcia, desde su Sabor</title>
+    <title>Ciclos Gastronómicos - Murcia, desde su Sabor</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 
@@ -65,7 +65,7 @@
             Hablando de Murcia
         </a>
         <a href="eventos.html"
-            class="mobile-link text-2xl font-black uppercase mb-10 text-m_red dark:text-m_yellow transition-colors">
+            class="mobile-link text-2xl font-black uppercase mb-10 hover:text-m_red dark:hover:text-m_yellow transition-colors">
             Eventos
         </a>
         <a href="contacto.html"
@@ -84,6 +84,7 @@
         </div>
     </div>
 
+    <!-- HEADER -->
     <header
         class="fixed top-0 w-full z-[60] px-6 py-4 backdrop-blur-md border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-m_navy/70">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -122,89 +123,178 @@
         </div>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <section class="relative pt-32 pb-24 px-6">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Título -->
             <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-4">
+                <span
+                    class="inline-block mb-4 text-sm font-bold uppercase tracking-[0.3em] text-m_red dark:text-m_yellow">
                     Eventos
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tighter mb-4">
+                    Ciclos Gastronómicos
                 </h1>
                 <div class="w-16 h-1 bg-m_red dark:bg-m_yellow mx-auto transition-colors duration-500"></div>
             </div>
 
-            <a href="ciclos-gastronomicos.html" class="evento-card evento-card--featured mb-6 block" data-aos="fade-up"
-                data-aos-delay="100" data-aos-duration="900">
-                <div class="evento-bg" style="background-image: url('assets/img/eventos/ciclos.png')"></div>
-                <div class="evento-overlay"></div>
-                <div class="evento-content">
-                    <div class="evento-content-top">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i data-lucide="utensils" class="evento-icon"></i>
-                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-white/80">Gastronomía</span>
-                        </div>
-                        <h2
-                            class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-tight text-white">
-                            Ciclos Gastronómicos
-                        </h2>
-                    </div>
-                    <div class="evento-content-reveal">
-                        <div class="evento-accent-line"></div>
-                        <p class="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
-                            Descubre el sabor de Murcia como nunca antes: producto local, chefs y degustaciones
-                            que te harán vivir la gastronomía desde dentro.
-                        </p>
-                    </div>
+            <!-- Bloque de texto -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
+
+                <p class="text-xl md:text-2xl font-semibold leading-relaxed opacity-80 mb-8 italic">
+                    Descubre los sabores de Murcia a través de una propuesta única que pone en valor
+                    el producto local y el talento gastronómico de nuestro municipio.
+                </p>
+
+                <div class="ciclos-texto-body">
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed mb-5">
+                        Los ciclos gastronómicos de "Murcia, desde su Sabor" son una serie de experiencias
+                        guiadas en el Centro Municipal Gastronómico, donde chefs y profesionales del sector
+                        compartirán su conocimiento a través de degustaciones en torno a ingredientes y
+                        elaboraciones representativas de nuestra tierra.
+                    </p>
+                    <p class="text-base md:text-lg opacity-60 leading-relaxed">
+                        Cada sesión está diseñada para acercar la gastronomía de una forma cercana y
+                        participativa, combinando explicación, producto y degustación en un entorno
+                        pensado para disfrutar y aprender.
+                    </p>
                 </div>
-            </a>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            </div>
 
-                <div class="evento-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
-                    <div class="evento-bg" style="background-image: url('assets/img/eventos/vino.jpg')"></div>
-                    <div class="evento-overlay"></div>
-                    <div class="evento-content">
-                        <div class="evento-content-top">
-                            <div class="flex items-center gap-3 mb-4">
-                                <i data-lucide="wine" class="evento-icon"></i>
-                                <span class="text-xs font-bold uppercase tracking-[0.3em] text-white/80">Vino &amp;
-                                    Vermut</span>
+            <!-- TICKETS -->
+            <div class="space-y-4">
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">01</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 16 de abril · 20:00h</span>
                             </div>
-                            <h2
-                                class="text-xl md:text-2xl font-black uppercase tracking-tighter leading-tight text-white">
-                                Catas de Vino y Vermut
-                            </h2>
+                            <h3 class="ticket-titulo">Tomate Originario de la Huerta de Murcia</h3>
                         </div>
-                        <div class="evento-content-reveal">
-                            <div class="evento-accent-line"></div>
-                            <p class="text-sm md:text-base text-white/70 leading-relaxed">
-                                Sumérgete en el mundo del vino y el vermut de Murcia y déjate sorprender
-                                por sus matices, su carácter y su esencia. Una experiencia para disfrutar,
-                                aprender… y brindar.
-                            </p>
-                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="evento-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
-                    <div class="evento-bg" style="background-image: url('assets/img/eventos/cerveza.jpg')"></div>
-                    <div class="evento-overlay"></div>
-                    <div class="evento-content">
-                        <div class="evento-content-top">
-                            <div class="flex items-center gap-3 mb-4">
-                                <i data-lucide="beer" class="evento-icon"></i>
-                                <span class="text-xs font-bold uppercase tracking-[0.3em] text-white/80">Cerveza</span>
+                <div class="ticket" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">02</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 23 de abril · 20:00h</span>
                             </div>
-                            <h2
-                                class="text-xl md:text-2xl font-black uppercase tracking-tighter leading-tight text-white">
-                                Catas de Cerveza Estrella de Levante
-                            </h2>
+                            <h3 class="ticket-titulo">Charcutería Tradicional y Artesana de Murcia</h3>
                         </div>
-                        <div class="evento-content-reveal">
-                            <div class="evento-accent-line"></div>
-                            <p class="text-sm md:text-base text-white/70 leading-relaxed">
-                                Explora el lado más sorprendente de la cerveza con catas y maridajes
-                                que despertarán todos tus sentidos.
-                            </p>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">03</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 30 de abril · 20:00h</span>
+                            </div>
+                            <h3 class="ticket-titulo">Encurtidos Tradicionales Murcianos</h3>
                         </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">04</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 7 de mayo · 20:00h</span>
+                            </div>
+                            <h3 class="ticket-titulo">El Aceite de Murcia</h3>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">05</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 14 de mayo · 20:00h</span>
+                            </div>
+                            <h3 class="ticket-titulo">Cocina Murciana Reinterpretada</h3>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ticket" data-aos="fade-up" data-aos-delay="350" data-aos-duration="800">
+                    <div class="ticket-body">
+                        <div class="ticket-ciclo">06</div>
+                        <div class="ticket-info">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="calendar" class="ticket-meta-icon"></i>
+                                <span class="ticket-fecha">Jueves 21 de mayo · 20:00h</span>
+                            </div>
+                            <h3 class="ticket-titulo">Plato Fusión</h3>
+                        </div>
+                    </div>
+                    <div class="ticket-notch ticket-notch--top"></div>
+                    <div class="ticket-notch ticket-notch--bottom"></div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-stub">
+                        <a href="#" class="ticket-btn">
+                            <i data-lucide="ticket" class="w-4 h-4 flex-shrink-0"></i>
+                            <span>Compra la entrada aquí</span>
+                        </a>
                     </div>
                 </div>
 
@@ -212,6 +302,7 @@
         </div>
     </section>
 
+    <!-- EN COLABORACIÓN CON -->
     <section class="py-16 px-6 border-t border-black/5 dark:border-white/5">
         <div class="max-w-5xl mx-auto">
 
@@ -239,6 +330,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="py-12 px-6 border-t border-black/5 dark:border-white/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 
