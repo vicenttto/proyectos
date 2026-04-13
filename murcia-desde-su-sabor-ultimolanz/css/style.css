@@ -1144,3 +1144,96 @@ html:not(.dark) .ticket {
         color: #FFD700;
     }
 }
+
+/* =========================================
+   BOTÓN FLOTANTE — VOLVER A EVENTOS
+   ========================================= */
+
+.btn-volver-eventos {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+    height: 48px;
+    width: 48px;
+    padding: 0 14px;
+    border-radius: 9999px;
+    background-color: #E31E24;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(227, 30, 36, 0.35);
+    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        gap 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.dark .btn-volver-eventos {
+    background-color: #FFD700;
+    color: #1D2338;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25);
+}
+
+/* Hover desktop — expand hacia la izquierda */
+@media (min-width: 640px) {
+    .btn-volver-eventos:hover {
+        width: 148px;
+        gap: 0.5rem;
+        box-shadow: 0 12px 32px rgba(227, 30, 36, 0.45);
+    }
+
+    .dark .btn-volver-eventos:hover {
+        box-shadow: 0 12px 32px rgba(255, 215, 0, 0.35);
+    }
+}
+
+.btn-volver-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-volver-eventos:hover .btn-volver-icon {
+    transform: translateX(-2px);
+}
+
+.btn-volver-texto {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease 0.1s,
+        max-width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 640px) {
+    .btn-volver-eventos:hover .btn-volver-texto {
+        opacity: 1;
+        max-width: 100px;
+    }
+}
+
+/* Móvil — siempre expandido */
+@media (max-width: 639px) {
+    .btn-volver-eventos {
+        width: 140px;
+        gap: 0.5rem;
+        padding: 0 18px;
+    }
+
+    .btn-volver-texto {
+        opacity: 1;
+        max-width: 100px;
+    }
+}
