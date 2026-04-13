@@ -1208,7 +1208,7 @@ html:not(.dark) .ticket {
     bottom: -2rem;
     right: -2rem;
     width: 350px;
-    opacity: 0.15;
+    opacity: 0.5;
 }
 
 .ilust-pequena {
@@ -1216,12 +1216,12 @@ html:not(.dark) .ticket {
     top: 5rem;
     left: -1rem;
     width: 200px;
-    opacity: 0.10;
+    opacity: 0.5;
 }
 
 .dark .ilust-grande,
 .dark .ilust-pequena {
-    opacity: 0.15;
+    opacity: 0.5;
 }
 
 @media (max-width: 767px) {
