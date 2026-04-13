@@ -1226,10 +1226,10 @@ html:not(.dark) .ticket {
 
 @media (max-width: 767px) {
     .ilust-grande {
-        width: 220px;
+        width: 160px;
     }
 
     .ilust-pequena {
-        width: 130px;
+        width: 90px;
     }
 }
