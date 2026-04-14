@@ -1253,6 +1253,16 @@ html:not(.dark) .ticket {
     }
 }
 
+@media (max-width: 767px) {
+    .ilust-grande.ilust-swapped {
+        transform: translate(calc(-100vw + 180px), calc(-100vh + 220px + 7rem));
+    }
+
+    .ilust-pequena.ilust-swapped {
+        transform: translate(calc(100vw - 120px), calc(100vh - 220px));
+    }
+}
+
 
 .ticker-wrapper {
     width: 100%;
