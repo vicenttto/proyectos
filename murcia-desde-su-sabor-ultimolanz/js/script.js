@@ -108,3 +108,19 @@ if (ilustGrandes.length && ilustPequenas.length) {
         }
     }, { passive: true });
 }
+
+if (window.innerWidth < 768) {
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollY / docHeight;
+        const rotation = progress * 360;
+
+        document.querySelectorAll('.ilust-grande').forEach(el => {
+            el.style.transform = `rotate(${rotation}deg)`;
+        });
+        document.querySelectorAll('.ilust-pequena').forEach(el => {
+            el.style.transform = `rotate(${-rotation}deg)`;
+        });
+    }, { passive: true });
+}
