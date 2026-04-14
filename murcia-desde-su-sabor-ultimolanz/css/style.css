@@ -1225,7 +1225,9 @@ html:not(.dark) .ticket {
 }
 
 .ilust-grande,
-.ilust-pequena {
+.ilust-pequena,
+.ilust-sup-der,
+.ilust-inf-izq {
     transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
         opacity 0.8s ease;
 }
@@ -1249,8 +1251,7 @@ html:not(.dark) .ticket {
     right: -2rem;
     width: 200px;
     opacity: 0.3;
-    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.8s ease;
+
 }
 
 .dark .ilust-sup-der {
@@ -1263,8 +1264,7 @@ html:not(.dark) .ticket {
     left: -1rem;
     width: 350px;
     opacity: 0.3;
-    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.8s ease;
+
 }
 
 .dark .ilust-inf-izq {

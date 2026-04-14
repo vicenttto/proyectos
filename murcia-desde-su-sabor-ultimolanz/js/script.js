@@ -95,32 +95,38 @@ const ilustPequenas = document.querySelectorAll('.ilust-pequena');
 const ilustSupDer = document.querySelectorAll('.ilust-sup-der');
 const ilustInfIzq = document.querySelectorAll('.ilust-inf-izq');
 
-if (ilustGrandes.length && ilustPequenas.length) {
+if (ilustGrandes.length) {
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = scrollY / docHeight;
-
+        const rotation = Math.min(progress, 0.7) / 0.7 * 360;
         const swapped = progress >= 0.7;
-        ilustGrandes.forEach(el => el.classList.toggle('ilust-swapped', swapped));
-        ilustPequenas.forEach(el => el.classList.toggle('ilust-swapped', swapped));
-        ilustSupDer.forEach(el => el.classList.toggle('ilust-swapped', swapped));
-        ilustInfIzq.forEach(el => el.classList.toggle('ilust-swapped', swapped));
-    }, { passive: true });
-}
 
-if (window.innerWidth < 768) {
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = scrollY / docHeight;
-        const rotation = progress * 360;
-
-        document.querySelectorAll('.ilust-grande, .ilust-inf-izq').forEach(el => {
-            el.style.transform = `rotate(${rotation}deg)`;
-        });
-        document.querySelectorAll('.ilust-pequena, .ilust-sup-der').forEach(el => {
-            el.style.transform = `rotate(${-rotation}deg)`;
-        });
+        if (window.innerWidth >= 768) {
+            ilustGrandes.forEach(el => {
+                el.classList.toggle('ilust-swapped', swapped);
+                el.style.transform = swapped ? '' : `rotate(${rotation}deg)`;
+            });
+            ilustPequenas.forEach(el => {
+                el.classList.toggle('ilust-swapped', swapped);
+                el.style.transform = swapped ? '' : `rotate(${-rotation}deg)`;
+            });
+            ilustSupDer.forEach(el => {
+                el.classList.toggle('ilust-swapped', swapped);
+                el.style.transform = swapped ? '' : `rotate(${-rotation}deg)`;
+            });
+            ilustInfIzq.forEach(el => {
+                el.classList.toggle('ilust-swapped', swapped);
+                el.style.transform = swapped ? '' : `rotate(${rotation}deg)`;
+            });
+        } else {
+            document.querySelectorAll('.ilust-grande, .ilust-inf-izq').forEach(el => {
+                el.style.transform = `rotate(${rotation}deg)`;
+            });
+            document.querySelectorAll('.ilust-pequena, .ilust-sup-der').forEach(el => {
+                el.style.transform = `rotate(${-rotation}deg)`;
+            });
+        }
     }, { passive: true });
 }
