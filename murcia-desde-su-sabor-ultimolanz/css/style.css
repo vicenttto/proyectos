@@ -1213,7 +1213,7 @@ html:not(.dark) .ticket {
     bottom: -2rem;
     right: -2rem;
     width: 350px;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .ilust-pequena {
@@ -1221,7 +1221,7 @@ html:not(.dark) .ticket {
     top: 5rem;
     left: -1rem;
     width: 200px;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .ilust-grande,
@@ -1240,20 +1240,69 @@ html:not(.dark) .ticket {
 
 .dark .ilust-grande,
 .dark .ilust-pequena {
-    opacity: 0.5;
+    opacity: 0.3;
+}
+
+.ilust-sup-der {
+    position: absolute;
+    top: 5rem;
+    right: -2rem;
+    width: 200px;
+    opacity: 0.3;
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.8s ease;
+}
+
+.dark .ilust-sup-der {
+    opacity: 0.3;
+}
+
+.ilust-inf-izq {
+    position: absolute;
+    bottom: -2rem;
+    left: -1rem;
+    width: 350px;
+    opacity: 0.3;
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.8s ease;
+}
+
+.dark .ilust-inf-izq {
+    opacity: 0.3;
+}
+
+.ilust-sup-der.ilust-swapped {
+    transform: translate(calc(-100vw + 300px), calc(100vh - 300px));
+}
+
+.ilust-inf-izq.ilust-swapped {
+    transform: translate(calc(100vw - 250px), calc(-100vh + 350px + 7rem));
 }
 
 @media (max-width: 767px) {
     .ilust-grande {
-        width: 160px;
+        width: 130px;
     }
 
     .ilust-pequena {
-        width: 90px;
+        width: 75px;
+    }
+
+    .ilust-sup-der {
+        width: 75px;
+    }
+
+    .ilust-inf-izq {
+        width: 130px;
     }
 
     .ilust-grande,
     .ilust-pequena {
+        transition: transform 0.1s linear;
+    }
+
+    .ilust-sup-der,
+    .ilust-inf-izq {
         transition: transform 0.1s linear;
     }
 }

@@ -92,6 +92,8 @@ if (proyectoWrapper) {
 
 const ilustGrandes = document.querySelectorAll('.ilust-grande');
 const ilustPequenas = document.querySelectorAll('.ilust-pequena');
+const ilustSupDer = document.querySelectorAll('.ilust-sup-der');
+const ilustInfIzq = document.querySelectorAll('.ilust-inf-izq');
 
 if (ilustGrandes.length && ilustPequenas.length) {
     window.addEventListener('scroll', () => {
@@ -99,13 +101,11 @@ if (ilustGrandes.length && ilustPequenas.length) {
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = scrollY / docHeight;
 
-        if (progress >= 0.7) {
-            ilustGrandes.forEach(el => el.classList.add('ilust-swapped'));
-            ilustPequenas.forEach(el => el.classList.add('ilust-swapped'));
-        } else {
-            ilustGrandes.forEach(el => el.classList.remove('ilust-swapped'));
-            ilustPequenas.forEach(el => el.classList.remove('ilust-swapped'));
-        }
+        const swapped = progress >= 0.7;
+        ilustGrandes.forEach(el => el.classList.toggle('ilust-swapped', swapped));
+        ilustPequenas.forEach(el => el.classList.toggle('ilust-swapped', swapped));
+        ilustSupDer.forEach(el => el.classList.toggle('ilust-swapped', swapped));
+        ilustInfIzq.forEach(el => el.classList.toggle('ilust-swapped', swapped));
     }, { passive: true });
 }
 
@@ -116,10 +116,10 @@ if (window.innerWidth < 768) {
         const progress = scrollY / docHeight;
         const rotation = progress * 360;
 
-        document.querySelectorAll('.ilust-grande').forEach(el => {
+        document.querySelectorAll('.ilust-grande, .ilust-inf-izq').forEach(el => {
             el.style.transform = `rotate(${rotation}deg)`;
         });
-        document.querySelectorAll('.ilust-pequena').forEach(el => {
+        document.querySelectorAll('.ilust-pequena, .ilust-sup-der').forEach(el => {
             el.style.transform = `rotate(${-rotation}deg)`;
         });
     }, { passive: true });
