@@ -89,3 +89,22 @@ if (proyectoWrapper) {
         }
     }, { passive: true });
 }
+
+const ilustGrandes = document.querySelectorAll('.ilust-grande');
+const ilustPequenas = document.querySelectorAll('.ilust-pequena');
+
+if (ilustGrandes.length && ilustPequenas.length) {
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollY / docHeight;
+
+        if (progress >= 0.7) {
+            ilustGrandes.forEach(el => el.classList.add('ilust-swapped'));
+            ilustPequenas.forEach(el => el.classList.add('ilust-swapped'));
+        } else {
+            ilustGrandes.forEach(el => el.classList.remove('ilust-swapped'));
+            ilustPequenas.forEach(el => el.classList.remove('ilust-swapped'));
+        }
+    }, { passive: true });
+}

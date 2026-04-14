@@ -1224,6 +1224,20 @@ html:not(.dark) .ticket {
     opacity: 0.5;
 }
 
+.ilust-grande,
+.ilust-pequena {
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.8s ease;
+}
+
+.ilust-grande.ilust-swapped {
+    transform: translate(calc(-100vw + 300px), calc(-100vh + 350px + 7rem));
+}
+
+.ilust-pequena.ilust-swapped {
+    transform: translate(calc(100vw - 250px), calc(100vh - 350px));
+}
+
 .dark .ilust-grande,
 .dark .ilust-pequena {
     opacity: 0.5;
